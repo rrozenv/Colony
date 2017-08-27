@@ -1,9 +1,15 @@
-//
-//  OnboardingScrollViewModel.swift
-//  Colony
-//
-//  Created by Robert Rozenvasser on 8/25/17.
-//  Copyright © 2017 GoKid. All rights reserved.
-//
 
 import Foundation
+import UIKit
+
+class OnboardingScrollViewModel {
+    
+    init() { }
+    
+    var pageInfo: [OnboardingPageInfo] {
+        let pageOne = OnboardingPageInfo(id: 1, headerString: "Hello", bodyString: "", buttonTitle: "")
+        let pageTwo = OnboardingPageInfo(id: 2, headerString: "Bye", bodyString: "", buttonTitle: "")
+        return [pageOne, pageTwo]
+    }
+    
+}

@@ -1,6 +1,5 @@
 
 import UIKit
-import Firebase
 
 final class AppController: UIViewController {
     
@@ -32,8 +31,7 @@ struct UserDefaultsKeys {
 extension AppController {
     
     func loadInitialViewController() {
-        let userSources = UserDefaults.standard.array(forKey: UserDefaultsKeys.sources) as? [String]
-        self.actingVC = (userSources != nil) ? UINavigationController(rootViewController: MasterTabBarController()) : OnboardingViewController()
+        self.actingVC = OnboardingScrollViewController()
         self.add(viewController: self.actingVC, animated: true)
     }
     
@@ -63,8 +61,9 @@ extension AppController {
             let masterTabBarVC = UINavigationController(rootViewController: MasterTabBarController())
             switchToViewController(masterTabBarVC)
         case Notification.Name.closeHomeVC:
-            let onboardingVC = LoginViewController()
-            switchToViewController(onboardingVC)
+            break
+//            let onboardingVC = LoginViewController()
+//            switchToViewController(onboardingVC)
         default:
             fatalError("\(#function) - Unable to match notficiation name.")
         }
