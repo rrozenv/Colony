@@ -2,7 +2,7 @@
 import Foundation
 import UIKit
 
-class OnboardingView: UIView {
+final class OnboardingView: UIView {
     
     var backgroundView: UIView!
     var headerLabel: UILabel!
@@ -17,12 +17,6 @@ class OnboardingView: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    var viewInfo: OnboardingPageInfo? {
-        didSet {
-            headerLabel.text = viewInfo?.headerString
-        }
     }
     
     private func setupBackgroundView() {

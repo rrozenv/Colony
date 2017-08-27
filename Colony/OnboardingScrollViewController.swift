@@ -9,7 +9,7 @@ struct OnboardingPageInfo {
     var buttonTitle: String
 }
 
-class OnboardingScrollViewController: UIViewController {
+final class OnboardingScrollViewController: UIViewController {
     
     fileprivate var viewModel: OnboardingScrollViewModel!
     fileprivate var scrollView: UIScrollView!
@@ -44,11 +44,19 @@ extension OnboardingScrollViewController {
     fileprivate func createViewsWith(_ pageInfo: [OnboardingPageInfo]) {
         pageInfo.forEach { (info) in
             let view = OnboardingView()
-            view.button.addTarget(self, action: #selector(didSelectNextButton), for: .touchUpInside)
-            view.viewInfo = info
+            configureViewWith(info, view: view)
             onboardingViews.append(view)
         }
     }
+    
+    fileprivate func configureViewWith(_ info: OnboardingPageInfo, view: OnboardingView) {
+        view.headerLabel.text = info.headerString
+        view.button.addTarget(self, action: #selector(didSelectNextButton), for: .touchUpInside)
+    }
+
+}
+
+extension OnboardingScrollViewController {
     
     fileprivate func setupScrollView() {
         scrollView = UIScrollView()

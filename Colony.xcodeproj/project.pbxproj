@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		98BAFA5A1F50B75B00ED3B9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BAFA591F50B75B00ED3B9D /* AppDelegate.swift */; };
-		98BAFA5C1F50B75B00ED3B9D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BAFA5B1F50B75B00ED3B9D /* ViewController.swift */; };
 		98BAFA5F1F50B75B00ED3B9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98BAFA5D1F50B75B00ED3B9D /* Main.storyboard */; };
 		98BAFA611F50B75B00ED3B9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98BAFA601F50B75B00ED3B9D /* Assets.xcassets */; };
 		98BAFA641F50B75B00ED3B9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98BAFA621F50B75B00ED3B9D /* LaunchScreen.storyboard */; };
@@ -22,7 +21,6 @@
 /* Begin PBXFileReference section */
 		98BAFA561F50B75B00ED3B9D /* Colony.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Colony.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98BAFA591F50B75B00ED3B9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		98BAFA5B1F50B75B00ED3B9D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		98BAFA5E1F50B75B00ED3B9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		98BAFA601F50B75B00ED3B9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98BAFA631F50B75B00ED3B9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -45,6 +43,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		98B3FB891F532B4800B3ADC4 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				98BAFA6F1F50B89F00ED3B9D /* OnboardingScrollViewController.swift */,
+				98BAFA731F50C53B00ED3B9D /* OnboardingScrollViewModel.swift */,
+				98BAFA711F50B9C000ED3B9D /* OnboardingView.swift */,
+			);
+			name = Onboarding;
+			sourceTree = "<group>";
+		};
 		98BAFA4D1F50B75B00ED3B9D = {
 			isa = PBXGroup;
 			children = (
@@ -65,11 +73,8 @@
 			isa = PBXGroup;
 			children = (
 				98BAFA591F50B75B00ED3B9D /* AppDelegate.swift */,
-				98BAFA5B1F50B75B00ED3B9D /* ViewController.swift */,
 				98BAFA6B1F50B76A00ED3B9D /* AppController.swift */,
-				98BAFA6F1F50B89F00ED3B9D /* OnboardingScrollViewController.swift */,
-				98BAFA731F50C53B00ED3B9D /* OnboardingScrollViewModel.swift */,
-				98BAFA711F50B9C000ED3B9D /* OnboardingView.swift */,
+				98B3FB891F532B4800B3ADC4 /* Onboarding */,
 				98BAFA6D1F50B7DF00ED3B9D /* MasterTabBarViewController.swift */,
 				98BAFA5D1F50B75B00ED3B9D /* Main.storyboard */,
 				98BAFA601F50B75B00ED3B9D /* Assets.xcassets */,
@@ -154,7 +159,6 @@
 			files = (
 				98BAFA6E1F50B7DF00ED3B9D /* MasterTabBarViewController.swift in Sources */,
 				98BAFA741F50C53B00ED3B9D /* OnboardingScrollViewModel.swift in Sources */,
-				98BAFA5C1F50B75B00ED3B9D /* ViewController.swift in Sources */,
 				98BAFA5A1F50B75B00ED3B9D /* AppDelegate.swift in Sources */,
 				98BAFA721F50B9C000ED3B9D /* OnboardingView.swift in Sources */,
 				98BAFA6C1F50B76A00ED3B9D /* AppController.swift in Sources */,
@@ -322,6 +326,7 @@
 				98BAFA6A1F50B75B00ED3B9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

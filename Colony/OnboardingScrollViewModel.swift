@@ -2,7 +2,7 @@
 import Foundation
 import UIKit
 
-class OnboardingScrollViewModel {
+final class OnboardingScrollViewModel {
     
     init() { }
     
