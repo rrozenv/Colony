@@ -1,5 +1,18 @@
 
 import UIKit
+import RealmSwift
+
+enum UserState {
+    case loggedIn(SyncUser)
+    case loggedOut
+    
+    static var currentState: UserState {
+        if let syncUser = RealmLoginManager.isUserLoggedIn() {
+            return .loggedIn(syncUser)
+        }
+        return .loggedOut
+    }
+}
 
 final class AppController: UIViewController {
     
@@ -17,21 +30,24 @@ final class AppController: UIViewController {
 extension AppController {
     
     func addNotificationObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(switchViewController(with:)), name: .closeLoginVC, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(switchViewController(with:)), name: .closeOnboardingVC, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(switchViewController(with:)), name: .closeHomeVC, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(switchViewController(with:)), name: .logout, object: nil)
     }
     
-}
-
-struct UserDefaultsKeys {
-    static let sources = "sources"
 }
 
 // MARK: - Loading VC's
 extension AppController {
     
     func loadInitialViewController() {
-        self.actingVC = OnboardingScrollViewController()
+        switch UserState.currentState {
+        case .loggedIn(_):
+            Realm.Configuration.defaultConfiguration = RealmConfig.common.configuration
+            self.actingVC = UINavigationController(rootViewController: HomeViewController(currentScreen: .prompts))
+        case .loggedOut:
+            self.actingVC = LoginViewController()
+        }
         self.add(viewController: self.actingVC, animated: true)
     }
     
@@ -55,15 +71,17 @@ extension AppController {
         }) { _ in }
     }
     
-    func switchViewController(with notification: Notification) {
+    @objc func switchViewController(with notification: Notification) {
         switch notification.name {
+        case Notification.Name.closeLoginVC:
+            let mainMovieListVC = UINavigationController(rootViewController: HomeViewController(currentScreen: .prompts))
+            switchToViewController(mainMovieListVC)
         case Notification.Name.closeOnboardingVC:
-            let masterTabBarVC = UINavigationController(rootViewController: MasterTabBarController())
+            let masterTabBarVC = UINavigationController(rootViewController: UIViewController())
             switchToViewController(masterTabBarVC)
-        case Notification.Name.closeHomeVC:
-            break
-//            let onboardingVC = LoginViewController()
-//            switchToViewController(onboardingVC)
+        case Notification.Name.logout:
+            let loginVC = LoginViewController()
+            switchToViewController(loginVC)
         default:
             fatalError("\(#function) - Unable to match notficiation name.")
         }
@@ -90,6 +108,8 @@ extension AppController {
 // MARK: - Notification Extension
 extension Notification.Name {
     static let closeOnboardingVC = Notification.Name("close-onboarding-view-controller")
-    static let closeHomeVC = Notification.Name("close-home-view-controller")
+    static let closeLoginVC = Notification.Name("close-login-view-controller")
+    static let logout = Notification.Name("logout")
+    static let locationChanged = Notification.Name("locationChanged")
 }
 

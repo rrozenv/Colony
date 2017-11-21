@@ -67,7 +67,7 @@ extension OnboardingScrollViewController {
         scrollView.constrainEdges(to: view)
     }
     
-    fileprivate func configureScrollViewWith<T:UIView>(_ views: [T]) {
+    fileprivate func configureScrollViewWith<T: UIView>(_ views: [T]) {
         scrollView.contentSize = CGSize(width: view.frame.width * CGFloat(onboardingViews.count), height: view.frame.height)
         
         for i in 0..<onboardingViews.count {
