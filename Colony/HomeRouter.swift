@@ -2,21 +2,21 @@
 import Foundation
 import UIKit
 
-//@objc protocol HomeRoutingLogic {
-//    func routeToSettings()
+@objc protocol HomeRoutingLogic {
+    func routeToProfile()
 //    func routeToLocationSearch()
-//    //func routeToMovieSearch()
-//}
+    //func routeToMovieSearch()
+}
 
-class HomeRouter: NSObject {
+class HomeRouter: NSObject, HomeRoutingLogic {
     
     weak var viewController: HomeViewController?
     
     // MARK: Routing
-//    func routeToSettings() {
-//        let destinationVC = SettingsViewController()
-//        navigateToSettings(source: viewController!, destination: destinationVC)
-//    }
+    func routeToProfile() {
+        let destinationVC = SettingsViewController()
+        navigateToSettings(source: viewController!, destination: destinationVC)
+    }
 //
 //    func routeToLocationSearch() {
 //        let destinationVC = LocationSearchViewController()
@@ -31,9 +31,9 @@ class HomeRouter: NSObject {
 //    
     // MARK: Navigation
     
-//    func navigateToSettings(source: HomeViewController, destination: SettingsViewController) {
-//        source.navigationController?.pushViewController(destination, animated: true)
-//    }
+    func navigateToSettings(source: HomeViewController, destination: SettingsViewController) {
+        source.navigationController?.pushViewController(destination, animated: true)
+    }
 //
 //    func navigateToLocationSearch(source: HomeViewController, destination: LocationSearchViewController) {
 //        source.navigationController?.pushViewController(destination, animated: true)

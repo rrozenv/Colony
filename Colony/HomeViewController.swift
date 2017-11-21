@@ -25,7 +25,7 @@ class HomeViewController: UIViewController {
     }()
     
     var engine: HomeBusinessLogic?
-    var router: (NSObjectProtocol)?
+    var router: (HomeRoutingLogic & NSObjectProtocol)?
     
     init(currentScreen: HomeViewController.CurrentScreen) {
         self.currentScreen = currentScreen
@@ -88,6 +88,10 @@ extension HomeViewController {
 //        self.switchViewController(for: self.currentTabButton)
 //    }
     
+    func didSelectProfileButton(_ sender: UIButton) {
+        router?.routeToProfile()
+    }
+    
 }
 
 //MARK: - Switch View Controller Functions
@@ -138,20 +142,20 @@ extension HomeViewController {
         
         view.addSubview(backgroundViewForStatusBar)
         backgroundViewForStatusBar.snp.makeConstraints { (make) in
-            make.left.top.bottom.equalTo(view)
+            make.left.top.right.equalTo(view)
             make.height.equalTo(20)
         }
     }
     
     func setupCustomNavigationBar() {
-        customNavBar = CustomNavigationBar(leftImage: nil, centerImage: nil, rightImage: nil)
-//        customNavBar.rightButton.addTarget(self, action: #selector(didSelectSettingsButton), for: .touchUpInside)
+        customNavBar = CustomNavigationBar(leftImage: nil, centerImage: nil, rightImage: #imageLiteral(resourceName: "IC_Profile"))
+        customNavBar.rightButton.addTarget(self, action: #selector(didSelectProfileButton), for: .touchUpInside)
 //        customNavBar.centerButton.addTarget(self, action: #selector(didSelectPostalCode), for: .touchUpInside)
         
         view.insertSubview(customNavBar, belowSubview: backgroundViewForStatusBar)
         customNavBar.snp.makeConstraints { (make) in
             make.left.right.equalTo(view)
-            make.top.equalTo(view).offset(20)
+            make.top.equalTo(backgroundViewForStatusBar.snp.bottom)
             make.height.equalTo(customNavBar.height)
         }
     }
