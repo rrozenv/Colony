@@ -17,6 +17,7 @@ class HomeViewController: UIViewController {
     
     fileprivate var backgroundViewForStatusBar: UIView!
     fileprivate var customNavBar: CustomNavigationBar!
+    fileprivate var createPromptButton: UIButton!
     
     fileprivate lazy var promptsViewController: PromptsListViewController = { [unowned self] in
         let vc = PromptsListViewController()
@@ -50,6 +51,7 @@ class HomeViewController: UIViewController {
         view.backgroundColor = UIColor.white
         setupBackgroundViewForStatusBar()
         setupCustomNavigationBar()
+        setupCreatePromptButton()
         setCurrentViewController()
     }
     
@@ -92,6 +94,10 @@ extension HomeViewController {
         router?.routeToProfile()
     }
     
+    func didSelectCreatePromptButton(_ sender: UIButton) {
+        router?.routeToCreatePrompt()
+    }
+    
 }
 
 //MARK: - Switch View Controller Functions
@@ -117,7 +123,7 @@ extension HomeViewController {
     
     fileprivate func add(asChildViewController viewController: UIViewController) {
         addChildViewController(viewController)
-        view.insertSubview(viewController.view, belowSubview: customNavBar)
+        view.insertSubview(viewController.view, belowSubview: createPromptButton)
         viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         viewController.didMove(toParentViewController: self)
         viewController.view.translatesAutoresizingMaskIntoConstraints = false
@@ -157,6 +163,22 @@ extension HomeViewController {
             make.left.right.equalTo(view)
             make.top.equalTo(backgroundViewForStatusBar.snp.bottom)
             make.height.equalTo(customNavBar.height)
+        }
+    }
+    
+    fileprivate func setupCreatePromptButton() {
+        //MARK: - createPromptButton Properties
+        createPromptButton = UIButton()
+        createPromptButton.backgroundColor = UIColor.black
+        createPromptButton.titleLabel?.font = FontBook.AvenirHeavy.of(size: 13)
+        createPromptButton.setTitle("Create Prompt", for: .normal)
+        createPromptButton.addTarget(self, action: #selector(didSelectCreatePromptButton), for: .touchUpInside)
+        
+        //MARK: - createPromptButton Constraints
+        view.insertSubview(createPromptButton, belowSubview: customNavBar)
+        createPromptButton.snp.makeConstraints { (make) in
+            make.left.bottom.right.equalTo(view)
+            make.height.equalTo(60)
         }
     }
     

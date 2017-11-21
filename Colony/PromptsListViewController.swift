@@ -77,12 +77,12 @@ extension PromptsListViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.red
         setupTableView()
-        setupCreatePromptButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = true
+        fetchPrompts()
     }
     
 }
@@ -105,6 +105,7 @@ extension PromptsListViewController: PromptsDisplayLogic {
     func displayPrompts(viewModel: Prompts.FetchPrompts.ViewModel) {
         //state.isLoading = false
         self.displayedPrompts = viewModel.prompts
+        self.tableView.reloadData()
     }
     
 }
@@ -149,21 +150,6 @@ extension PromptsListViewController {
             make.edges.equalTo(view)
         }
     }
-    
-    fileprivate func setupCreatePromptButton() {
-        //MARK: - createPromptButton Properties
-        createPromptButton = UIButton()
-        createPromptButton.backgroundColor = UIColor.black
-        createPromptButton.titleLabel?.font = FontBook.AvenirHeavy.of(size: 13)
-        createPromptButton.setTitle("Create Prompt", for: .normal)
-//        createPromptButton.addTarget(self, action: #selector(didSelectMovieSearchButton), for: .touchUpInside)
-        
-        //MARK: - createPromptButton Constraints
-        view.addSubview(createPromptButton)
-        createPromptButton.snp.makeConstraints { (make) in
-            make.left.bottom.right.equalTo(view)
-            make.height.equalTo(60)
-        }
-    }
+
     
 }

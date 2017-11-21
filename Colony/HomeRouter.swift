@@ -4,6 +4,7 @@ import UIKit
 
 @objc protocol HomeRoutingLogic {
     func routeToProfile()
+    func routeToCreatePrompt()
 //    func routeToLocationSearch()
     //func routeToMovieSearch()
 }
@@ -16,6 +17,11 @@ class HomeRouter: NSObject, HomeRoutingLogic {
     func routeToProfile() {
         let destinationVC = SettingsViewController()
         navigateToSettings(source: viewController!, destination: destinationVC)
+    }
+    
+    func routeToCreatePrompt() {
+        let destinationVC = CreatePromptViewController()
+        navigateTo(destination: destinationVC, from: viewController!)
     }
 //
 //    func routeToLocationSearch() {
@@ -30,6 +36,10 @@ class HomeRouter: NSObject, HomeRoutingLogic {
 //    }
 //    
     // MARK: Navigation
+    
+    func navigateTo(destination: UIViewController, from source: UIViewController) {
+        source.navigationController?.pushViewController(destination, animated: true)
+    }
     
     func navigateToSettings(source: HomeViewController, destination: SettingsViewController) {
         source.navigationController?.pushViewController(destination, animated: true)

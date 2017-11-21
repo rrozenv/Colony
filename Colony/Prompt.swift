@@ -17,4 +17,8 @@ class Prompt: Object {
         self.title = title
         self.body = body
     }
+    
+    static func valueDict(title: String, body: String) -> [String: Any] {
+        return ["title": title, "body": body]
+    }
 }
