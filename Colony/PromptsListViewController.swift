@@ -1,6 +1,6 @@
 
-import Foundation
 import UIKit
+import Foundation
 import RealmSwift
 import PromiseKit
 import SnapKit

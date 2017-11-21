@@ -43,7 +43,7 @@ class HomeViewController: UIViewController {
         let router = HomeRouter()
         viewController.engine = engine
         viewController.router = router
-        //router.viewController = viewController
+        router.viewController = viewController
     }
     
     override func viewDidLoad() {
