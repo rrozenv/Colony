@@ -31,6 +31,10 @@
 		9825B2611FC3E15800620398 /* SettingsEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825B25D1FC3E15700620398 /* SettingsEngine.swift */; };
 		9825B2621FC3E15800620398 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825B25E1FC3E15700620398 /* SettingsViewController.swift */; };
 		9825B2631FC3E15800620398 /* SettingsSharedObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825B25F1FC3E15700620398 /* SettingsSharedObjects.swift */; };
+		98671C891FC5D07F00578651 /* PromptDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98671C881FC5D07F00578651 /* PromptDetailViewController.swift */; };
+		98671C8B1FC5D0BE00578651 /* PromptDetailEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98671C8A1FC5D0BE00578651 /* PromptDetailEngine.swift */; };
+		98671C8D1FC5D21B00578651 /* PromptDetailModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98671C8C1FC5D21B00578651 /* PromptDetailModels.swift */; };
+		98671C8F1FC5D2C600578651 /* PromptDetailFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98671C8E1FC5D2C600578651 /* PromptDetailFormatter.swift */; };
 		98716A2E1FC4C493008EDACE /* CreatePromptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98716A2D1FC4C493008EDACE /* CreatePromptViewController.swift */; };
 		98716A301FC4C4A4008EDACE /* CreatePromptEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98716A2F1FC4C4A4008EDACE /* CreatePromptEngine.swift */; };
 		98716A321FC4C4BA008EDACE /* CreatePromptFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98716A311FC4C4BA008EDACE /* CreatePromptFormatter.swift */; };
@@ -76,6 +80,10 @@
 		9825B25D1FC3E15700620398 /* SettingsEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsEngine.swift; sourceTree = "<group>"; };
 		9825B25E1FC3E15700620398 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		9825B25F1FC3E15700620398 /* SettingsSharedObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsSharedObjects.swift; sourceTree = "<group>"; };
+		98671C881FC5D07F00578651 /* PromptDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptDetailViewController.swift; sourceTree = "<group>"; };
+		98671C8A1FC5D0BE00578651 /* PromptDetailEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptDetailEngine.swift; sourceTree = "<group>"; };
+		98671C8C1FC5D21B00578651 /* PromptDetailModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptDetailModels.swift; sourceTree = "<group>"; };
+		98671C8E1FC5D2C600578651 /* PromptDetailFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptDetailFormatter.swift; sourceTree = "<group>"; };
 		98716A2D1FC4C493008EDACE /* CreatePromptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePromptViewController.swift; sourceTree = "<group>"; };
 		98716A2F1FC4C4A4008EDACE /* CreatePromptEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePromptEngine.swift; sourceTree = "<group>"; };
 		98716A311FC4C4BA008EDACE /* CreatePromptFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePromptFormatter.swift; sourceTree = "<group>"; };
@@ -120,7 +128,6 @@
 			isa = PBXGroup;
 			children = (
 				98BAFA6B1F50B76A00ED3B9D /* AppController.swift */,
-				9825B2311FC3C77300620398 /* User.swift */,
 			);
 			name = "App Controller";
 			sourceTree = "<group>";
@@ -163,6 +170,7 @@
 		9825B2581FC3CC9C00620398 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9825B2311FC3C77300620398 /* User.swift */,
 				9825B2561FC3CBCC00620398 /* Prompt.swift */,
 			);
 			name = Models;
@@ -179,10 +187,49 @@
 			name = Profile;
 			sourceTree = "<group>";
 		};
-		98716A2C1FC4C45B008EDACE /* Create Prompt */ = {
+		98671C841FC5CB3A00578651 /* Alert Views */ = {
 			isa = PBXGroup;
 			children = (
 				98716A371FC4C958008EDACE /* CustomAlertViewController.swift */,
+			);
+			name = "Alert Views";
+			sourceTree = "<group>";
+		};
+		98671C851FC5CB5500578651 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9825B2591FC3DA1F00620398 /* FontBook.swift */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		98671C861FC5CB6900578651 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				9825B23E1FC3C84B00620398 /* Home */,
+				9825B25B1FC3E14200620398 /* Profile */,
+				98716A2C1FC4C45B008EDACE /* Create Prompt */,
+				98671C871FC5D04500578651 /* Prompt Detail */,
+				9825B2491FC3C9C100620398 /* Prompts */,
+				9825B2331FC3C79700620398 /* Login */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		98671C871FC5D04500578651 /* Prompt Detail */ = {
+			isa = PBXGroup;
+			children = (
+				98671C881FC5D07F00578651 /* PromptDetailViewController.swift */,
+				98671C8A1FC5D0BE00578651 /* PromptDetailEngine.swift */,
+				98671C8E1FC5D2C600578651 /* PromptDetailFormatter.swift */,
+				98671C8C1FC5D21B00578651 /* PromptDetailModels.swift */,
+			);
+			name = "Prompt Detail";
+			sourceTree = "<group>";
+		};
+		98716A2C1FC4C45B008EDACE /* Create Prompt */ = {
+			isa = PBXGroup;
+			children = (
 				98716A2D1FC4C493008EDACE /* CreatePromptViewController.swift */,
 				98716A2F1FC4C4A4008EDACE /* CreatePromptEngine.swift */,
 				98716A311FC4C4BA008EDACE /* CreatePromptFormatter.swift */,
@@ -227,12 +274,9 @@
 				9825B2301FC3C74700620398 /* App Controller */,
 				9825B2581FC3CC9C00620398 /* Models */,
 				9825B22F1FC3C73F00620398 /* Realm */,
-				9825B25B1FC3E14200620398 /* Profile */,
-				9825B23E1FC3C84B00620398 /* Home */,
-				98716A2C1FC4C45B008EDACE /* Create Prompt */,
-				9825B2491FC3C9C100620398 /* Prompts */,
-				9825B2331FC3C79700620398 /* Login */,
-				9825B2591FC3DA1F00620398 /* FontBook.swift */,
+				98671C841FC5CB3A00578651 /* Alert Views */,
+				98671C861FC5CB6900578651 /* Scenes */,
+				98671C851FC5CB5500578651 /* Resources */,
 				98B3FB891F532B4800B3ADC4 /* Onboarding */,
 				98BAFA6D1F50B7DF00ED3B9D /* MasterTabBarViewController.swift */,
 				98BAFA601F50B75B00ED3B9D /* Assets.xcassets */,
@@ -416,6 +460,9 @@
 				98BAFA741F50C53B00ED3B9D /* OnboardingScrollViewModel.swift in Sources */,
 				9825B25A1FC3DA1F00620398 /* FontBook.swift in Sources */,
 				98BAFA5A1F50B75B00ED3B9D /* AppDelegate.swift in Sources */,
+				98671C8D1FC5D21B00578651 /* PromptDetailModels.swift in Sources */,
+				98671C8F1FC5D2C600578651 /* PromptDetailFormatter.swift in Sources */,
+				98671C8B1FC5D0BE00578651 /* PromptDetailEngine.swift in Sources */,
 				9825B2521FC3C9DD00620398 /* PromptsEngine.swift in Sources */,
 				9825B2461FC3C86100620398 /* HomeRouter.swift in Sources */,
 				9825B2571FC3CBCC00620398 /* Prompt.swift in Sources */,
@@ -433,6 +480,7 @@
 				9825B2621FC3E15800620398 /* SettingsViewController.swift in Sources */,
 				98BAFA721F50B9C000ED3B9D /* OnboardingView.swift in Sources */,
 				98BAFA6C1F50B76A00ED3B9D /* AppController.swift in Sources */,
+				98671C891FC5D07F00578651 /* PromptDetailViewController.swift in Sources */,
 				9825B2431FC3C86100620398 /* TabBarView.swift in Sources */,
 				98716A2E1FC4C493008EDACE /* CreatePromptViewController.swift in Sources */,
 				9825B2451FC3C86100620398 /* HomeEngine.swift in Sources */,

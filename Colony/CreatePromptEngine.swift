@@ -21,7 +21,8 @@ final class CreatePromptEngine: CreatePromptLogic, CreatePromptDataStore {
         let value = Prompt.valueDict(title: request.title, body: request.body)
         self.commonRealm
             .create(Prompt.self, value: value)
-            .then { (_) in
+            .then { [weak self] (prompt) -> Void in
+                self?.prompt = prompt
                 completion(true)
             }
             .catch { (error) in

@@ -34,4 +34,8 @@ class User: Object {
         return user
     }
     
+    class func currentUser(in realm: Realm) -> User? {
+        return realm.object(ofType: User.self, forPrimaryKey: "id")
+    }
+    
 }

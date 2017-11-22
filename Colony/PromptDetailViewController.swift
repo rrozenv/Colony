@@ -1,44 +1,21 @@
 
-import UIKit
 import Foundation
-import RealmSwift
-import PromiseKit
-import SnapKit
+import UIKit
 
-// MARK: - Initialization
-
-protocol PromptsDisplayLogic: class {
-    func displayPrompts(viewModel: Prompts.FetchPrompts.ViewModel)
+protocol PromptDetailDisplayLogic: class {
+    func displayPromptReplies(viewModel: PromptDetail.FetchPromptReplies.ViewModel)
 }
 
-final class PromptsListViewController: UIViewController {
-    
-    struct State {
-        var isLoading: Bool = false
-        var selectedRow: Int?
-    }
+final class PromptDetailViewController: UIViewController {
     
     var tableView: UITableView!
-    var displayedPrompts = [DisplayedPrompt]()
-    
-    //var collectionViewTopInset: CGFloat?
-    var createPromptButton: UIButton!
+    var displayedReplies = [DisplayedReply]()
 
-//    var state: State = State() {
-//        didSet {
-//            if state.isLoading {
-//                loadingIndicator.startAnimating()
-//            } else {
-//                loadingIndicator.stopAnimating()
-//            }
-//        }
-//    }
-
-    var engine: PromptsListBusinessLogic?
-//    var router:
-//        ( &
-//         MainMovieListDataPassing &
-//         NSObjectProtocol)?
+    var engine: PromptDetailLogic?
+    //    var router:
+    //        ( &
+    //         MainMovieListDataPassing &
+    //         NSObjectProtocol)?
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -52,26 +29,26 @@ final class PromptsListViewController: UIViewController {
     
     private func setup() {
         let viewController = self
-        let engine = PromptsListEngine()
-        let formatter = PromptsFormatter()
+        let engine = PromptDetailEngine()
+        let formatter = PromptDetailFormatter()
         //let router = MainMovieListRouter()
         viewController.engine = engine
         //viewController.router = router
         engine.formatter = formatter
         formatter.viewController = viewController
-//        router.viewController = viewController
-//        router.dataStore = interactor
+        //        router.viewController = viewController
+        //        router.dataStore = interactor
     }
     
     deinit {
         print("Main Movie list is deiniting")
     }
-  
+    
 }
 
 // MARK: - View Life Cycle
 
-extension PromptsListViewController {
+extension PromptDetailViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,29 +59,29 @@ extension PromptsListViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = true
-        fetchPrompts()
+        fetchPromptReplies()
     }
     
 }
 
 // MARK: - Output
 
-extension PromptsListViewController {
+extension PromptDetailViewController {
     
-    func fetchPrompts() {
-        let request = Prompts.FetchPrompts.Request()
-        engine?.fetchPrompts(request: request)
+    func fetchPromptReplies() {
+        let request = PromptDetail.FetchPromptReplies.Request()
+        engine?.fetchPromptReplies(request: request)
     }
     
 }
 
 // MARK: - Formatter Input
 
-extension PromptsListViewController: PromptsDisplayLogic {
+extension PromptDetailViewController: PromptDetailDisplayLogic {
     
-    func displayPrompts(viewModel: Prompts.FetchPrompts.ViewModel) {
+    func displayPromptReplies(viewModel: PromptDetail.FetchPromptReplies.ViewModel) {
         //state.isLoading = false
-        self.displayedPrompts = viewModel.prompts
+        self.displayedReplies = viewModel.replies
         self.tableView.reloadData()
     }
     
@@ -112,20 +89,21 @@ extension PromptsListViewController: PromptsDisplayLogic {
 
 //MARK: - View Setup
 
-extension PromptsListViewController: UITableViewDataSource, UITableViewDelegate {
+extension PromptDetailViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return displayedPrompts.count
+        return displayedReplies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LocationCell", for: indexPath)
-        let prompt = self.displayedPrompts[indexPath.row]
-        cell.textLabel?.text = prompt.title
+        let reply = self.displayedReplies[indexPath.row]
+        cell.textLabel?.text = reply.body
+        cell.detailTextLabel?.text = reply.userName
         return cell
     }
     
@@ -135,7 +113,7 @@ extension PromptsListViewController: UITableViewDataSource, UITableViewDelegate 
     
 }
 
-extension PromptsListViewController {
+extension PromptDetailViewController {
     
     fileprivate func setupTableView() {
         //MARK: - tableView Properties
@@ -150,6 +128,6 @@ extension PromptsListViewController {
             make.edges.equalTo(view)
         }
     }
-
+    
     
 }
