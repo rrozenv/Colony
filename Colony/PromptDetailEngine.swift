@@ -6,7 +6,7 @@ protocol PromptDetailLogic {
 }
 
 protocol PromptDetailDataStore {
-    var prompt: Prompt! { get }
+    var prompt: Prompt! { get set }
 }
 
 final class PromptDetailEngine: PromptDetailLogic, PromptDetailDataStore {
@@ -15,6 +15,7 @@ final class PromptDetailEngine: PromptDetailLogic, PromptDetailDataStore {
     var prompt: Prompt!
     
     func fetchPromptReplies(request: PromptDetail.FetchPromptReplies.Request) {
+        print("Selected \(prompt.title)")
         let replies = Array(prompt.replies)
         let response = PromptDetail.FetchPromptReplies.Response(replies: replies)
         formatter?.formatPromptReplies(response: response)

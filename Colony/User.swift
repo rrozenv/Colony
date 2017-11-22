@@ -8,6 +8,7 @@ class User: Object {
     dynamic var id: String = ""
     dynamic var name: String = ""
     dynamic var email: String = ""
+    let replies = List<PromptReply>()
     
     // MARK: - Init
     convenience init(syncUser: SyncUser, name: String, email: String) {
@@ -22,7 +23,7 @@ class User: Object {
         return "id"
     }
     
-    class func loadUser(_ name: String?, _ email: String?) -> User? {
+    class func loadUser(_ name: String? = nil, _ email: String? = nil) -> User? {
         let commonRealm =  try! Realm(configuration: RealmConfig.common.configuration)
         var user = commonRealm.objects(User.self).filter(NSPredicate(format: "id = %@", SyncUser.current!.identity!)).first
         if user == nil {
@@ -32,10 +33,6 @@ class User: Object {
             }
         }
         return user
-    }
-    
-    class func currentUser(in realm: Realm) -> User? {
-        return realm.object(ofType: User.self, forPrimaryKey: "id")
     }
     
 }

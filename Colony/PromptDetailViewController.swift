@@ -10,12 +10,13 @@ final class PromptDetailViewController: UIViewController {
     
     var tableView: UITableView!
     var displayedReplies = [DisplayedReply]()
+    var createReplyButton: UIButton!
 
     var engine: PromptDetailLogic?
-    //    var router:
-    //        ( &
-    //         MainMovieListDataPassing &
-    //         NSObjectProtocol)?
+    var router:
+    (PromptDetailRoutingLogic &
+    PromptDetailDataPassing &
+    NSObjectProtocol)?
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -31,13 +32,13 @@ final class PromptDetailViewController: UIViewController {
         let viewController = self
         let engine = PromptDetailEngine()
         let formatter = PromptDetailFormatter()
-        //let router = MainMovieListRouter()
+        let router = PromptDetailRouter()
         viewController.engine = engine
-        //viewController.router = router
+        viewController.router = router
         engine.formatter = formatter
         formatter.viewController = viewController
-        //        router.viewController = viewController
-        //        router.dataStore = interactor
+        router.viewController = viewController
+        router.dataStore = engine
     }
     
     deinit {
@@ -54,12 +55,17 @@ extension PromptDetailViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.red
         setupTableView()
+        setupCreatePromptReplyButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.isNavigationBarHidden = true
+        self.navigationController?.isNavigationBarHidden = false
         fetchPromptReplies()
+    }
+    
+    func didSelectCreateReplyButton(_ sender: UIButton) {
+        router?.routeToCreatePromptReply()
     }
     
 }
@@ -126,6 +132,22 @@ extension PromptDetailViewController {
         view.addSubview(tableView)
         tableView.snp.makeConstraints { (make) in
             make.edges.equalTo(view)
+        }
+    }
+    
+    fileprivate func setupCreatePromptReplyButton() {
+        //MARK: - createPromptButton Properties
+        createReplyButton = UIButton()
+        createReplyButton.backgroundColor = UIColor.black
+        createReplyButton.titleLabel?.font = FontBook.AvenirHeavy.of(size: 13)
+        createReplyButton.setTitle("Reply", for: .normal)
+        createReplyButton.addTarget(self, action: #selector(didSelectCreateReplyButton), for: .touchUpInside)
+        
+        //MARK: - createPromptButton Constraints
+        view.addSubview(createReplyButton)
+        createReplyButton.snp.makeConstraints { (make) in
+            make.left.bottom.right.equalTo(view)
+            make.height.equalTo(60)
         }
     }
     

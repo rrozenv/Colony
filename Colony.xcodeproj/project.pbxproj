@@ -23,7 +23,7 @@
 		9825B2501FC3C9DD00620398 /* PromptstModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825B24A1FC3C9DC00620398 /* PromptstModels.swift */; };
 		9825B2511FC3C9DD00620398 /* PromptsFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825B24B1FC3C9DC00620398 /* PromptsFormatter.swift */; };
 		9825B2521FC3C9DD00620398 /* PromptsEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825B24C1FC3C9DC00620398 /* PromptsEngine.swift */; };
-		9825B2541FC3C9DD00620398 /* MainMovieListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825B24E1FC3C9DD00620398 /* MainMovieListRouter.swift */; };
+		9825B2541FC3C9DD00620398 /* PromptsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825B24E1FC3C9DD00620398 /* PromptsRouter.swift */; };
 		9825B2551FC3C9DD00620398 /* PromptsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825B24F1FC3C9DD00620398 /* PromptsListViewController.swift */; };
 		9825B2571FC3CBCC00620398 /* Prompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825B2561FC3CBCC00620398 /* Prompt.swift */; };
 		9825B25A1FC3DA1F00620398 /* FontBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825B2591FC3DA1F00620398 /* FontBook.swift */; };
@@ -35,6 +35,11 @@
 		98671C8B1FC5D0BE00578651 /* PromptDetailEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98671C8A1FC5D0BE00578651 /* PromptDetailEngine.swift */; };
 		98671C8D1FC5D21B00578651 /* PromptDetailModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98671C8C1FC5D21B00578651 /* PromptDetailModels.swift */; };
 		98671C8F1FC5D2C600578651 /* PromptDetailFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98671C8E1FC5D2C600578651 /* PromptDetailFormatter.swift */; };
+		98671C911FC5D5FB00578651 /* PromptDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98671C901FC5D5FB00578651 /* PromptDetailRouter.swift */; };
+		98671C941FC5E77700578651 /* CreatePromptReplyEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98671C931FC5E77700578651 /* CreatePromptReplyEngine.swift */; };
+		98671C961FC5E8D300578651 /* CreatePromptReplyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98671C951FC5E8D300578651 /* CreatePromptReplyModels.swift */; };
+		98671C981FC5ECE900578651 /* CreatePromptReplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98671C971FC5ECE900578651 /* CreatePromptReplyViewController.swift */; };
+		98671C9A1FC5EE3400578651 /* CreatePromptReplyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98671C991FC5EE3400578651 /* CreatePromptReplyRouter.swift */; };
 		98716A2E1FC4C493008EDACE /* CreatePromptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98716A2D1FC4C493008EDACE /* CreatePromptViewController.swift */; };
 		98716A301FC4C4A4008EDACE /* CreatePromptEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98716A2F1FC4C4A4008EDACE /* CreatePromptEngine.swift */; };
 		98716A321FC4C4BA008EDACE /* CreatePromptFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98716A311FC4C4BA008EDACE /* CreatePromptFormatter.swift */; };
@@ -72,7 +77,7 @@
 		9825B24A1FC3C9DC00620398 /* PromptstModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromptstModels.swift; sourceTree = "<group>"; };
 		9825B24B1FC3C9DC00620398 /* PromptsFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromptsFormatter.swift; sourceTree = "<group>"; };
 		9825B24C1FC3C9DC00620398 /* PromptsEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromptsEngine.swift; sourceTree = "<group>"; };
-		9825B24E1FC3C9DD00620398 /* MainMovieListRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMovieListRouter.swift; sourceTree = "<group>"; };
+		9825B24E1FC3C9DD00620398 /* PromptsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromptsRouter.swift; sourceTree = "<group>"; };
 		9825B24F1FC3C9DD00620398 /* PromptsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromptsListViewController.swift; sourceTree = "<group>"; };
 		9825B2561FC3CBCC00620398 /* Prompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prompt.swift; sourceTree = "<group>"; };
 		9825B2591FC3DA1F00620398 /* FontBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontBook.swift; sourceTree = "<group>"; };
@@ -84,6 +89,11 @@
 		98671C8A1FC5D0BE00578651 /* PromptDetailEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptDetailEngine.swift; sourceTree = "<group>"; };
 		98671C8C1FC5D21B00578651 /* PromptDetailModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptDetailModels.swift; sourceTree = "<group>"; };
 		98671C8E1FC5D2C600578651 /* PromptDetailFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptDetailFormatter.swift; sourceTree = "<group>"; };
+		98671C901FC5D5FB00578651 /* PromptDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptDetailRouter.swift; sourceTree = "<group>"; };
+		98671C931FC5E77700578651 /* CreatePromptReplyEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePromptReplyEngine.swift; sourceTree = "<group>"; };
+		98671C951FC5E8D300578651 /* CreatePromptReplyModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePromptReplyModels.swift; sourceTree = "<group>"; };
+		98671C971FC5ECE900578651 /* CreatePromptReplyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePromptReplyViewController.swift; sourceTree = "<group>"; };
+		98671C991FC5EE3400578651 /* CreatePromptReplyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePromptReplyRouter.swift; sourceTree = "<group>"; };
 		98716A2D1FC4C493008EDACE /* CreatePromptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePromptViewController.swift; sourceTree = "<group>"; };
 		98716A2F1FC4C4A4008EDACE /* CreatePromptEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePromptEngine.swift; sourceTree = "<group>"; };
 		98716A311FC4C4BA008EDACE /* CreatePromptFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePromptFormatter.swift; sourceTree = "<group>"; };
@@ -162,7 +172,7 @@
 				9825B24C1FC3C9DC00620398 /* PromptsEngine.swift */,
 				9825B24A1FC3C9DC00620398 /* PromptstModels.swift */,
 				9825B24B1FC3C9DC00620398 /* PromptsFormatter.swift */,
-				9825B24E1FC3C9DD00620398 /* MainMovieListRouter.swift */,
+				9825B24E1FC3C9DD00620398 /* PromptsRouter.swift */,
 			);
 			name = Prompts;
 			sourceTree = "<group>";
@@ -209,6 +219,7 @@
 				9825B23E1FC3C84B00620398 /* Home */,
 				9825B25B1FC3E14200620398 /* Profile */,
 				98716A2C1FC4C45B008EDACE /* Create Prompt */,
+				98671C921FC5E71400578651 /* Create Prompt Reply */,
 				98671C871FC5D04500578651 /* Prompt Detail */,
 				9825B2491FC3C9C100620398 /* Prompts */,
 				9825B2331FC3C79700620398 /* Login */,
@@ -222,9 +233,21 @@
 				98671C881FC5D07F00578651 /* PromptDetailViewController.swift */,
 				98671C8A1FC5D0BE00578651 /* PromptDetailEngine.swift */,
 				98671C8E1FC5D2C600578651 /* PromptDetailFormatter.swift */,
+				98671C901FC5D5FB00578651 /* PromptDetailRouter.swift */,
 				98671C8C1FC5D21B00578651 /* PromptDetailModels.swift */,
 			);
 			name = "Prompt Detail";
+			sourceTree = "<group>";
+		};
+		98671C921FC5E71400578651 /* Create Prompt Reply */ = {
+			isa = PBXGroup;
+			children = (
+				98671C971FC5ECE900578651 /* CreatePromptReplyViewController.swift */,
+				98671C931FC5E77700578651 /* CreatePromptReplyEngine.swift */,
+				98671C991FC5EE3400578651 /* CreatePromptReplyRouter.swift */,
+				98671C951FC5E8D300578651 /* CreatePromptReplyModels.swift */,
+			);
+			name = "Create Prompt Reply";
 			sourceTree = "<group>";
 		};
 		98716A2C1FC4C45B008EDACE /* Create Prompt */ = {
@@ -446,6 +469,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98671C911FC5D5FB00578651 /* PromptDetailRouter.swift in Sources */,
 				9825B2551FC3C9DD00620398 /* PromptsListViewController.swift in Sources */,
 				9825B23D1FC3C7B700620398 /* LoginViewController.swift in Sources */,
 				98BAFA6E1F50B7DF00ED3B9D /* MasterTabBarViewController.swift in Sources */,
@@ -454,10 +478,11 @@
 				9825B2391FC3C7B700620398 /* LoginViewControllerEngine.swift in Sources */,
 				98716A321FC4C4BA008EDACE /* CreatePromptFormatter.swift in Sources */,
 				9825B2501FC3C9DD00620398 /* PromptstModels.swift in Sources */,
-				9825B2541FC3C9DD00620398 /* MainMovieListRouter.swift in Sources */,
+				9825B2541FC3C9DD00620398 /* PromptsRouter.swift in Sources */,
 				98716A361FC4C55C008EDACE /* CreatePromptRouter.swift in Sources */,
 				98716A341FC4C4CC008EDACE /* CreatePromptModels.swift in Sources */,
 				98BAFA741F50C53B00ED3B9D /* OnboardingScrollViewModel.swift in Sources */,
+				98671C981FC5ECE900578651 /* CreatePromptReplyViewController.swift in Sources */,
 				9825B25A1FC3DA1F00620398 /* FontBook.swift in Sources */,
 				98BAFA5A1F50B75B00ED3B9D /* AppDelegate.swift in Sources */,
 				98671C8D1FC5D21B00578651 /* PromptDetailModels.swift in Sources */,
@@ -470,13 +495,16 @@
 				9825B2601FC3E15800620398 /* SettingsPresenter.swift in Sources */,
 				9825B2631FC3E15800620398 /* SettingsSharedObjects.swift in Sources */,
 				98716A381FC4C958008EDACE /* CustomAlertViewController.swift in Sources */,
+				98671C9A1FC5EE3400578651 /* CreatePromptReplyRouter.swift in Sources */,
 				9825B2481FC3C94400620398 /* RealmStorageContext.swift in Sources */,
 				9825B2511FC3C9DD00620398 /* PromptsFormatter.swift in Sources */,
 				9825B22E1FC3C6AD00620398 /* RealmConfiguration.swift in Sources */,
+				98671C961FC5E8D300578651 /* CreatePromptReplyModels.swift in Sources */,
 				9825B2321FC3C77300620398 /* User.swift in Sources */,
 				9825B23C1FC3C7B700620398 /* LoginPresenter.swift in Sources */,
 				9825B23A1FC3C7B700620398 /* LoginModels.swift in Sources */,
 				9825B2441FC3C86100620398 /* HomeViewController.swift in Sources */,
+				98671C941FC5E77700578651 /* CreatePromptReplyEngine.swift in Sources */,
 				9825B2621FC3E15800620398 /* SettingsViewController.swift in Sources */,
 				98BAFA721F50B9C000ED3B9D /* OnboardingView.swift in Sources */,
 				98BAFA6C1F50B76A00ED3B9D /* AppController.swift in Sources */,

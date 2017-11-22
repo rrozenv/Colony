@@ -24,6 +24,7 @@ final class PromptsListEngine: PromptsListBusinessLogic, PromptsListDataStore {
         self.commonRealm
             .fetch(Prompt.self)
             .then { [weak self] (prompts) -> Void in
+                self?.prompts = prompts
                 let response = Prompts.FetchPrompts.Response(prompts: prompts)
                 self?.formatter?.formatPrompts(response: response)
             }

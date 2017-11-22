@@ -5,6 +5,7 @@ import PromiseKit
 
 enum RealmError: Error {
     case saveFailed(String)
+    case updateFailed(String)
     case createFailed(String?)
     case deleteObjectFailed(String)
     case deleteAllObjectsFailed
@@ -13,6 +14,8 @@ enum RealmError: Error {
         switch self {
         case .saveFailed(let description):
             return "Realm failed to save object: \(description)."
+        case .updateFailed(let description):
+            return "Realm failed to update object: \(description)"
         case .createFailed(let description):
             return "Realm failed to create object: \(String(describing: description))."
         case .deleteObjectFailed(let description):
@@ -99,9 +102,16 @@ class RealmStorageContext: RealmStorageFunctions {
         }
     }
     
-    func update(block: @escaping () -> Void) {
-        try! realm.write {
-            block()
+    func update(block: @escaping () -> Void) -> Promise<Void> {
+        return Promise { fullfill, reject in
+            do {
+                try realm.write {
+                    block()
+                }
+                fullfill()
+            } catch {
+                reject(RealmError.updateFailed("Failed to update."))
+            }
         }
     }
     

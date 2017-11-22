@@ -28,6 +28,7 @@ class PromptReply: Object {
     dynamic var uniqueID: String = UUID().uuidString
     dynamic var userId: String = ""
     dynamic var userName: String = ""
+    dynamic var promptId: String = ""
     dynamic var body: String = ""
     dynamic var time = Date().timeIntervalSince(Date())
     
@@ -35,14 +36,15 @@ class PromptReply: Object {
         return "uniqueID"
     }
     
-    convenience init(user: User, title: String, body: String) {
+    convenience init(user: User, prompt: Prompt, body: String) {
         self.init()
         self.userId = user.id
         self.userName = user.name
+        self.promptId = prompt.uniqueID
         self.body = body
     }
     
-    static func valueDict(user: User, title: String, body: String) -> [String: Any] {
-        return ["userId": user.id, "userName": user.name, "title": title, "body": body]
+    static func valueDict(user: User, body: String) -> [String: Any] {
+        return ["userId": user.id, "userName": user.name, "body": body]
     }
 }

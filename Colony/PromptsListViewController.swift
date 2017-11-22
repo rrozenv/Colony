@@ -24,21 +24,20 @@ final class PromptsListViewController: UIViewController {
     //var collectionViewTopInset: CGFloat?
     var createPromptButton: UIButton!
 
-//    var state: State = State() {
-//        didSet {
-//            if state.isLoading {
-//                loadingIndicator.startAnimating()
-//            } else {
-//                loadingIndicator.stopAnimating()
-//            }
-//        }
-//    }
+    var state: State = State() {
+        didSet {
+            if state.isLoading {
+                //loadingIndicator.startAnimating()
+            } else {
+                //loadingIndicator.stopAnimating()
+            }
+        }
+    }
 
     var engine: PromptsListBusinessLogic?
-//    var router:
-//        ( &
-//         MainMovieListDataPassing &
-//         NSObjectProtocol)?
+    var router:
+        (PromptsRoutingLogic & PromptsDataPassing &
+         NSObjectProtocol)?
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -54,13 +53,13 @@ final class PromptsListViewController: UIViewController {
         let viewController = self
         let engine = PromptsListEngine()
         let formatter = PromptsFormatter()
-        //let router = MainMovieListRouter()
+        let router = PromptsRouter()
         viewController.engine = engine
-        //viewController.router = router
+        viewController.router = router
         engine.formatter = formatter
         formatter.viewController = viewController
-//        router.viewController = viewController
-//        router.dataStore = interactor
+        router.viewController = viewController
+        router.dataStore = engine
     }
     
     deinit {
@@ -130,7 +129,8 @@ extension PromptsListViewController: UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        state.selectedRow = indexPath.row
+        router?.routeToPromptDetail()
     }
     
 }
