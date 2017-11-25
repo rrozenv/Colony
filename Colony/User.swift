@@ -35,4 +35,10 @@ class User: Object {
         return user
     }
     
+    class func loadCurrentUser() -> User? {
+        let commonRealm =  try! Realm(configuration: RealmConfig.common.configuration)
+        let user = commonRealm.objects(User.self).filter(NSPredicate(format: "id = %@", SyncUser.current!.identity!)).first
+        return user
+    }
+    
 }

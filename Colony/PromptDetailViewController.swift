@@ -81,6 +81,15 @@ extension PromptDetailViewController {
     
 }
 
+extension PromptDetailViewController: PromptTableCellDelegate {
+    
+    func didSelectScore(_ score: String, replyId: String) {
+        let request = PromptDetail.SaveUserScoreForReply.Request(replyId: replyId, score: score)
+        engine?.saveUserCastedScore(request: request)
+    }
+    
+}
+
 // MARK: - Formatter Input
 
 extension PromptDetailViewController: PromptDetailDisplayLogic {
@@ -106,10 +115,10 @@ extension PromptDetailViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "LocationCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: PromptReplyTableCell.reuseIdentifier, for: indexPath) as? PromptReplyTableCell else { fatalError() }
+        if cell.delegate == nil { cell.delegate = self }
         let reply = self.displayedReplies[indexPath.row]
-        cell.textLabel?.text = reply.body
-        cell.detailTextLabel?.text = reply.userName
+        cell.configure(with: reply)
         return cell
     }
     
@@ -124,9 +133,11 @@ extension PromptDetailViewController {
     fileprivate func setupTableView() {
         //MARK: - tableView Properties
         tableView = UITableView(frame: CGRect.zero, style: .grouped)
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "LocationCell")
+        tableView.register(PromptReplyTableCell.self, forCellReuseIdentifier: PromptReplyTableCell.reuseIdentifier)
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.estimatedRowHeight = 200
+        tableView.rowHeight = UITableViewAutomaticDimension
         
         //MARK: - tableView Constraints
         view.addSubview(tableView)

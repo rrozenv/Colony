@@ -34,7 +34,7 @@ final class PromptsListEngine: PromptsListBusinessLogic, PromptsListDataStore {
                 } else {
                     print(error.localizedDescription)
                 }
-        }
+            }
     }
 
 }

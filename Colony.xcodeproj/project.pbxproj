@@ -54,6 +54,9 @@
 		98BAFA701F50B89F00ED3B9D /* OnboardingScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BAFA6F1F50B89F00ED3B9D /* OnboardingScrollViewController.swift */; };
 		98BAFA721F50B9C000ED3B9D /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BAFA711F50B9C000ED3B9D /* OnboardingView.swift */; };
 		98BAFA741F50C53B00ED3B9D /* OnboardingScrollViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BAFA731F50C53B00ED3B9D /* OnboardingScrollViewModel.swift */; };
+		98EA482E1FC9DCE2008EF317 /* PromptReply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EA482D1FC9DCE2008EF317 /* PromptReply.swift */; };
+		98EA48301FC9E48D008EF317 /* PromptReplyTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EA482F1FC9E48D008EF317 /* PromptReplyTableCell.swift */; };
+		98EA48331FC9E9D0008EF317 /* ScoreCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EA48321FC9E9D0008EF317 /* ScoreCollectionCell.swift */; };
 		CD54AFE895258676FAA2F05F /* Pods_Colony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13759BAA5618CEE84D731378 /* Pods_Colony.framework */; };
 /* End PBXBuildFile section */
 
@@ -110,6 +113,9 @@
 		98BAFA6F1F50B89F00ED3B9D /* OnboardingScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingScrollViewController.swift; sourceTree = "<group>"; };
 		98BAFA711F50B9C000ED3B9D /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		98BAFA731F50C53B00ED3B9D /* OnboardingScrollViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingScrollViewModel.swift; sourceTree = "<group>"; };
+		98EA482D1FC9DCE2008EF317 /* PromptReply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptReply.swift; sourceTree = "<group>"; };
+		98EA482F1FC9E48D008EF317 /* PromptReplyTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptReplyTableCell.swift; sourceTree = "<group>"; };
+		98EA48321FC9E9D0008EF317 /* ScoreCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCollectionCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +188,7 @@
 			children = (
 				9825B2311FC3C77300620398 /* User.swift */,
 				9825B2561FC3CBCC00620398 /* Prompt.swift */,
+				98EA482D1FC9DCE2008EF317 /* PromptReply.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -230,6 +237,7 @@
 		98671C871FC5D04500578651 /* Prompt Detail */ = {
 			isa = PBXGroup;
 			children = (
+				98EA48311FC9E493008EF317 /* Views */,
 				98671C881FC5D07F00578651 /* PromptDetailViewController.swift */,
 				98671C8A1FC5D0BE00578651 /* PromptDetailEngine.swift */,
 				98671C8E1FC5D2C600578651 /* PromptDetailFormatter.swift */,
@@ -307,6 +315,15 @@
 				98BAFA651F50B75B00ED3B9D /* Info.plist */,
 			);
 			path = Colony;
+			sourceTree = "<group>";
+		};
+		98EA48311FC9E493008EF317 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				98EA482F1FC9E48D008EF317 /* PromptReplyTableCell.swift */,
+				98EA48321FC9E9D0008EF317 /* ScoreCollectionCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		D5D48C4567EE9E0029B41CDD /* Frameworks */ = {
@@ -479,7 +496,9 @@
 				98716A321FC4C4BA008EDACE /* CreatePromptFormatter.swift in Sources */,
 				9825B2501FC3C9DD00620398 /* PromptstModels.swift in Sources */,
 				9825B2541FC3C9DD00620398 /* PromptsRouter.swift in Sources */,
+				98EA482E1FC9DCE2008EF317 /* PromptReply.swift in Sources */,
 				98716A361FC4C55C008EDACE /* CreatePromptRouter.swift in Sources */,
+				98EA48331FC9E9D0008EF317 /* ScoreCollectionCell.swift in Sources */,
 				98716A341FC4C4CC008EDACE /* CreatePromptModels.swift in Sources */,
 				98BAFA741F50C53B00ED3B9D /* OnboardingScrollViewModel.swift in Sources */,
 				98671C981FC5ECE900578651 /* CreatePromptReplyViewController.swift in Sources */,
@@ -489,6 +508,7 @@
 				98671C8F1FC5D2C600578651 /* PromptDetailFormatter.swift in Sources */,
 				98671C8B1FC5D0BE00578651 /* PromptDetailEngine.swift in Sources */,
 				9825B2521FC3C9DD00620398 /* PromptsEngine.swift in Sources */,
+				98EA48301FC9E48D008EF317 /* PromptReplyTableCell.swift in Sources */,
 				9825B2461FC3C86100620398 /* HomeRouter.swift in Sources */,
 				9825B2571FC3CBCC00620398 /* Prompt.swift in Sources */,
 				9825B2611FC3E15800620398 /* SettingsEngine.swift in Sources */,

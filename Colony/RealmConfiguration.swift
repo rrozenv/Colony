@@ -3,7 +3,7 @@ import Foundation
 import RealmSwift
 
 struct Constants {
-    static let defaultSyncHost = "10.123.31.231"
+    static let defaultSyncHost = "172.31.99.171"
     static let syncAuthURL = URL(string: "http://\(defaultSyncHost):9080")!
     static let syncServerURL = URL(string: "realm://\(defaultSyncHost):9080/")
     static let commonRealmURL = URL(string: "realm://\(defaultSyncHost):9080/CommonRealm")!
@@ -29,7 +29,7 @@ enum RealmConfig {
     }
     
     private static func commonRealmConfig(user: SyncUser) -> Realm.Configuration  {
-        let config = Realm.Configuration(syncConfiguration: SyncConfiguration(user: SyncUser.current!, realmURL: Constants.commonRealmURL), objectTypes: [Prompt.self, User.self, PromptReply.self])
+        let config = Realm.Configuration(syncConfiguration: SyncConfiguration(user: SyncUser.current!, realmURL: Constants.commonRealmURL), objectTypes: [Prompt.self, User.self, PromptReply.self, UserScore.self])
         return config
     }
     
