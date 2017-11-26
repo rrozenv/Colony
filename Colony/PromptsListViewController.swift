@@ -122,9 +122,9 @@ extension PromptsListViewController: UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "LocationCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: PromptTableCell.reuseIdentifier, for: indexPath) as? PromptTableCell else { fatalError() }
         let prompt = self.displayedPrompts[indexPath.row]
-        cell.textLabel?.text = prompt.title
+        cell.configure(with: prompt)
         return cell
     }
     
@@ -140,9 +140,12 @@ extension PromptsListViewController {
     fileprivate func setupTableView() {
         //MARK: - tableView Properties
         tableView = UITableView(frame: CGRect.zero, style: .grouped)
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "LocationCell")
+        tableView.register(PromptTableCell.self, forCellReuseIdentifier: PromptTableCell.reuseIdentifier)
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.estimatedRowHeight = 200
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.separatorStyle = .none
         
         //MARK: - tableView Constraints
         view.addSubview(tableView)

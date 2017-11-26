@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9816A3D11FCB41E200219BBA /* PromptTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816A3D01FCB41E200219BBA /* PromptTableCell.swift */; };
+		9816A3D41FCB42EC00219BBA /* PromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816A3D31FCB42EC00219BBA /* PromptView.swift */; };
 		9825B22C1FC3C5BF00620398 /* RealmLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825B22B1FC3C5BF00620398 /* RealmLoginManager.swift */; };
 		9825B22E1FC3C6AD00620398 /* RealmConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825B22D1FC3C6AD00620398 /* RealmConfiguration.swift */; };
 		9825B2321FC3C77300620398 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825B2311FC3C77300620398 /* User.swift */; };
@@ -64,6 +66,8 @@
 		13759BAA5618CEE84D731378 /* Pods_Colony.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Colony.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		54E7ADC8513A8A98CA9D0B0D /* Pods-Colony.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Colony.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Colony/Pods-Colony.debug.xcconfig"; sourceTree = "<group>"; };
 		6D2FDA25E849A289AB851B10 /* Pods-Colony.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Colony.release.xcconfig"; path = "Pods/Target Support Files/Pods-Colony/Pods-Colony.release.xcconfig"; sourceTree = "<group>"; };
+		9816A3D01FCB41E200219BBA /* PromptTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptTableCell.swift; sourceTree = "<group>"; };
+		9816A3D31FCB42EC00219BBA /* PromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptView.swift; sourceTree = "<group>"; };
 		9825B22B1FC3C5BF00620398 /* RealmLoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmLoginManager.swift; sourceTree = "<group>"; };
 		9825B22D1FC3C6AD00620398 /* RealmConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmConfiguration.swift; sourceTree = "<group>"; };
 		9825B2311FC3C77300620398 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -130,6 +134,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9816A3D21FCB41E800219BBA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9816A3D01FCB41E200219BBA /* PromptTableCell.swift */,
+				9816A3D31FCB42EC00219BBA /* PromptView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		9825B22F1FC3C73F00620398 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +187,7 @@
 		9825B2491FC3C9C100620398 /* Prompts */ = {
 			isa = PBXGroup;
 			children = (
+				9816A3D21FCB41E800219BBA /* Views */,
 				9825B24F1FC3C9DD00620398 /* PromptsListViewController.swift */,
 				9825B24C1FC3C9DC00620398 /* PromptsEngine.swift */,
 				9825B24A1FC3C9DC00620398 /* PromptstModels.swift */,
@@ -494,6 +508,7 @@
 				9825B23B1FC3C7B700620398 /* LoginRouter.swift in Sources */,
 				9825B2391FC3C7B700620398 /* LoginViewControllerEngine.swift in Sources */,
 				98716A321FC4C4BA008EDACE /* CreatePromptFormatter.swift in Sources */,
+				9816A3D41FCB42EC00219BBA /* PromptView.swift in Sources */,
 				9825B2501FC3C9DD00620398 /* PromptstModels.swift in Sources */,
 				9825B2541FC3C9DD00620398 /* PromptsRouter.swift in Sources */,
 				98EA482E1FC9DCE2008EF317 /* PromptReply.swift in Sources */,
@@ -508,6 +523,7 @@
 				98671C8F1FC5D2C600578651 /* PromptDetailFormatter.swift in Sources */,
 				98671C8B1FC5D0BE00578651 /* PromptDetailEngine.swift in Sources */,
 				9825B2521FC3C9DD00620398 /* PromptsEngine.swift in Sources */,
+				9816A3D11FCB41E200219BBA /* PromptTableCell.swift in Sources */,
 				98EA48301FC9E48D008EF317 /* PromptReplyTableCell.swift in Sources */,
 				9825B2461FC3C86100620398 /* HomeRouter.swift in Sources */,
 				9825B2571FC3CBCC00620398 /* Prompt.swift in Sources */,
