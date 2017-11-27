@@ -4,26 +4,37 @@ import UIKit
 
 @objc protocol CreatePromptRoutingLogic {
     func routeToHome()
+    func routeToSelectGIF()
 }
 
-//protocol ListShowtimesDataPassing {
-//    var dataStore: ListShowtimesDataStore? { get }
-//}
+protocol CreatePrompotDataPassing {
+    var dataStore: CreatePromptDataStore? { get }
+}
 
 class CreatePromptRouter: NSObject, CreatePromptRoutingLogic {
    
     weak var viewController: CreatePromptViewController?
-    //var dataStore: ListShowtimesDataStore?
+    var dataStore: CreatePromptDataStore?
     
     // MARK: Routing
     func routeToHome() {
-//        let index = viewController!.navigationController!.viewControllers.count - 2
-//        let destinationVC = viewController?.navigationController?.viewControllers[index] as! HomeViewController
         navigateToHome()
+    }
+    
+    func routeToSelectGIF() {
+        let destinationVC = SelectGIFViewController()
+        self.navigateToSelectGIF(source: viewController!, destination: destinationVC)
     }
     
     func navigateToHome() {
         viewController?.navigationController?.popViewController(animated: true)
+    }
+    
+    func navigateToSelectGIF(source: CreatePromptViewController, destination: SelectGIFViewController) {
+        source.present(destination, animated: true, completion: nil)
+        destination.didSelectGIF = { [weak self] (gif) in
+            self?.dataStore?.gif = gif
+        }
     }
     
 }

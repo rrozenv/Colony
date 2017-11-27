@@ -2,7 +2,7 @@
 import Foundation
 import Moya
 
-struct Resource<A> {
+struct Resource<A: Codable> {
     let target: TargetType
     let parse: (Data) -> A?
 }
@@ -16,3 +16,4 @@ extension Resource {
         }
     }
 }
+

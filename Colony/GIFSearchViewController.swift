@@ -54,7 +54,7 @@ final class GIFSearchViewController: UIViewController, GIFSDisplayLogic {
         setupSearchTextfield()
         setupSearchTextFieldCallback()
         setupSearchTextFieldConstraints()
-        setupSearchIcon()
+        //setupSearchIcon()
         setupClearSearchButton()
         setupCollectionView()
     }
@@ -209,7 +209,6 @@ extension GIFSearchViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let gif = self.displayedGIFS[indexPath.row]
         delegate?.didSelectGIF(gif)
-        
     }
     
 }

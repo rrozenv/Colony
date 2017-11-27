@@ -6,6 +6,8 @@ final class CreatePromptViewController: UIViewController {
     
     var bodyTextView: UITextView!
     var titleTextView: UITextView!
+    var addGIFButton: UIButton!
+    
     var engine: CreatePromptLogic?
     var router:
     (CreatePromptRoutingLogic &
@@ -31,6 +33,7 @@ final class CreatePromptViewController: UIViewController {
 //        engine.presenter = presenter
 //        presenter.viewController = viewController
         router.viewController = viewController
+        router.dataStore = engine
     }
 
     override func viewDidLoad() {
@@ -39,6 +42,7 @@ final class CreatePromptViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = false
         setupTitleTextView()
         setupBodyTextView()
+        setupAddGIFButton()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(didSelectPostButton))
         titleTextView.becomeFirstResponder()
     }
@@ -54,10 +58,20 @@ final class CreatePromptViewController: UIViewController {
     
     func didSelectPostButton(_ sender: UIBarButtonItem) {
         let request = CreatePrompt.Create.Request(title: titleTextView.text, body: bodyTextView.text)
-        engine?.createPrompt(request: request, completion: { (isSuccess) in
-            print(isSuccess)
-            self.router?.routeToHome()
+        engine?.createPrompt(request: request, completion: { (result) in
+            switch result {
+            case .success:
+                self.router?.routeToHome()
+            case .missingGIF:
+                print("GIF missing!")
+            default:
+                print("no success")
+            }
         })
+    }
+    
+    func didSelectAddGIF(_ sender: UIButton) {
+        router?.routeToSelectGIF()
     }
     
     func setupTitleTextView() {
@@ -91,6 +105,20 @@ final class CreatePromptViewController: UIViewController {
             make.left.equalTo(view).offset(20)
             make.right.equalTo(view).offset(-20)
             make.top.equalTo(titleTextView.snp.bottom).offset(10)
+        }
+    }
+    
+    func setupAddGIFButton() {
+        addGIFButton = UIButton()
+        addGIFButton.backgroundColor = UIColor.blue
+        addGIFButton.setTitle("Post", for: .normal)
+        addGIFButton.addTarget(self, action: #selector(didSelectAddGIF), for: .touchUpInside)
+        
+        view.addSubview(addGIFButton)
+        addGIFButton.snp.makeConstraints { (make) in
+            make.left.equalTo(view).offset(20)
+            make.right.equalTo(view).offset(-20)
+            make.top.equalTo(bodyTextView.snp.bottom).offset(10)
         }
     }
     
