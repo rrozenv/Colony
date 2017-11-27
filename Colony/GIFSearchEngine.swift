@@ -18,7 +18,11 @@ final class GIFSearchEngine: GIFSearchLogic {
                 self?.generateResponseForPresenter(with: gifs)
             }.catch { [weak self] (error) in
                 self?.generateResponseForPresenter(with: nil)
-                print(error.localizedDescription)
+                if let httpError = error as? HTTPError {
+                    print(httpError.description)
+                } else {
+                    print(error.localizedDescription)
+                }
             }
     }
     

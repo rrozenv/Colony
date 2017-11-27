@@ -6,14 +6,9 @@ import UIKit
     func routeToCreatePrompt()
 }
 
-protocol SelectGIFDataPassing {
-    var dataStore: SelectGIFDataStore? { get }
-}
-
-class SelectGIFRouter: NSObject, SelectGIFRoutingLogic, SelectGIFDataPassing {
+class SelectGIFRouter: NSObject, SelectGIFRoutingLogic {
     
     weak var viewController: SelectGIFViewController?
-    var dataStore: SelectGIFDataStore?
     
     // MARK: Routing
     func routeToCreatePrompt() {

@@ -5,11 +5,12 @@ typealias JSONDictionary = [String: Any]
 
 struct GIF {
     let id: String
-    let url: String
+    let url: URL
     
     init?(dictionary: JSONDictionary) {
         guard let id = dictionary["id"] as? String,
-            let url = dictionary["url"] as? String else { return nil }
+              let urlString = dictionary["url"] as? String,
+              let url = URL(string: urlString) else { return nil }
         self.id = id
         self.url = url
     }

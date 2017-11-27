@@ -198,7 +198,7 @@ extension GIFSearchViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainMovieListCell.reuseIdentifier, for: indexPath) as! MainMovieListCell
-        cell.titleLabel.text = displayedGIFS[indexPath.item].url
+        cell.titleLabel.text = displayedGIFS[indexPath.item].url.absoluteString
         return cell
     }
     

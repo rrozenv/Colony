@@ -11,7 +11,6 @@ final class SelectGIFViewController: UIViewController {
     var doneButton: UIButton!
     var didSelectGIF: ((GIF) -> Void)?
     
-    var engine: SelectGIFEngine?
     var router:
     (SelectGIFRoutingLogic &
     NSObjectProtocol)?
@@ -28,9 +27,7 @@ final class SelectGIFViewController: UIViewController {
     
     private func setup() {
         let viewController = self
-        let engine = SelectGIFEngine()
         let router = SelectGIFRouter()
-        viewController.engine = engine
         viewController.router = router
         router.viewController = viewController
     }
