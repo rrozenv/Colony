@@ -8,4 +8,6 @@ target 'Colony' do
   pod 'PromiseKit/CoreLocation'
   pod 'RealmSwift'
   pod 'SnapKit', '~> 3.2'
+  pod 'SwiftGifOrigin', '~> 1.6.1'
+  pod 'SwiftyGif'
 end

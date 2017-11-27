@@ -20,7 +20,7 @@
 		9816A3EC1FCB9EB500219BBA /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816A3EB1FCB9EB400219BBA /* SearchTextField.swift */; };
 		9816A3EE1FCB9ED200219BBA /* Throttler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816A3ED1FCB9ED200219BBA /* Throttler.swift */; };
 		9816A3F21FCBA52B00219BBA /* GIFGridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816A3F01FCBA52B00219BBA /* GIFGridLayout.swift */; };
-		9816A3F31FCBA52B00219BBA /* MainMovieListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816A3F11FCBA52B00219BBA /* MainMovieListCell.swift */; };
+		9816A3F31FCBA52B00219BBA /* GIFCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816A3F11FCBA52B00219BBA /* GIFCollectionCell.swift */; };
 		9819BB491FCC69FF00FD5633 /* SelectGIFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9819BB481FCC69FF00FD5633 /* SelectGIFViewController.swift */; };
 		9819BB4D1FCC72D300FD5633 /* SelectGIFRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9819BB4C1FCC72D300FD5633 /* SelectGIFRouter.swift */; };
 		9825B22C1FC3C5BF00620398 /* RealmLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825B22B1FC3C5BF00620398 /* RealmLoginManager.swift */; };
@@ -62,6 +62,8 @@
 		98716A341FC4C4CC008EDACE /* CreatePromptModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98716A331FC4C4CC008EDACE /* CreatePromptModels.swift */; };
 		98716A361FC4C55C008EDACE /* CreatePromptRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98716A351FC4C55C008EDACE /* CreatePromptRouter.swift */; };
 		98716A381FC4C958008EDACE /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98716A371FC4C958008EDACE /* CustomAlertViewController.swift */; };
+		988665A21FCC9DA200CBE463 /* Swift+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988665A11FCC9DA200CBE463 /* Swift+Gif.swift */; };
+		988665A41FCCB02700CBE463 /* PixabayAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988665A31FCCB02700CBE463 /* PixabayAPI.swift */; };
 		98BAFA5A1F50B75B00ED3B9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BAFA591F50B75B00ED3B9D /* AppDelegate.swift */; };
 		98BAFA611F50B75B00ED3B9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98BAFA601F50B75B00ED3B9D /* Assets.xcassets */; };
 		98BAFA641F50B75B00ED3B9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98BAFA621F50B75B00ED3B9D /* LaunchScreen.storyboard */; };
@@ -93,7 +95,7 @@
 		9816A3EB1FCB9EB400219BBA /* SearchTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
 		9816A3ED1FCB9ED200219BBA /* Throttler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Throttler.swift; sourceTree = "<group>"; };
 		9816A3F01FCBA52B00219BBA /* GIFGridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GIFGridLayout.swift; sourceTree = "<group>"; };
-		9816A3F11FCBA52B00219BBA /* MainMovieListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMovieListCell.swift; sourceTree = "<group>"; };
+		9816A3F11FCBA52B00219BBA /* GIFCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GIFCollectionCell.swift; sourceTree = "<group>"; };
 		9819BB481FCC69FF00FD5633 /* SelectGIFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGIFViewController.swift; sourceTree = "<group>"; };
 		9819BB4C1FCC72D300FD5633 /* SelectGIFRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGIFRouter.swift; sourceTree = "<group>"; };
 		9825B22B1FC3C5BF00620398 /* RealmLoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmLoginManager.swift; sourceTree = "<group>"; };
@@ -135,6 +137,8 @@
 		98716A331FC4C4CC008EDACE /* CreatePromptModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePromptModels.swift; sourceTree = "<group>"; };
 		98716A351FC4C55C008EDACE /* CreatePromptRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePromptRouter.swift; sourceTree = "<group>"; };
 		98716A371FC4C958008EDACE /* CustomAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
+		988665A11FCC9DA200CBE463 /* Swift+Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Swift+Gif.swift"; sourceTree = "<group>"; };
+		988665A31FCCB02700CBE463 /* PixabayAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixabayAPI.swift; sourceTree = "<group>"; };
 		98BAFA561F50B75B00ED3B9D /* Colony.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Colony.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98BAFA591F50B75B00ED3B9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98BAFA601F50B75B00ED3B9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -174,10 +178,10 @@
 		9816A3D51FCB858700219BBA /* Webservice */ = {
 			isa = PBXGroup;
 			children = (
+				985260581FCCB1BE00CAECE0 /* Targets */,
 				9816A3D61FCB85B000219BBA /* Webservice.swift */,
 				9816A3ED1FCB9ED200219BBA /* Throttler.swift */,
 				9816A3D81FCB861800219BBA /* Resource.swift */,
-				9816A3DA1FCB867C00219BBA /* GifAPI.swift */,
 			);
 			name = Webservice;
 			sourceTree = "<group>";
@@ -198,7 +202,8 @@
 			isa = PBXGroup;
 			children = (
 				9816A3F01FCBA52B00219BBA /* GIFGridLayout.swift */,
-				9816A3F11FCBA52B00219BBA /* MainMovieListCell.swift */,
+				988665A11FCC9DA200CBE463 /* Swift+Gif.swift */,
+				9816A3F11FCBA52B00219BBA /* GIFCollectionCell.swift */,
 				9816A3EB1FCB9EB400219BBA /* SearchTextField.swift */,
 			);
 			name = Views;
@@ -289,6 +294,23 @@
 			name = Profile;
 			sourceTree = "<group>";
 		};
+		985260581FCCB1BE00CAECE0 /* Targets */ = {
+			isa = PBXGroup;
+			children = (
+				9816A3DA1FCB867C00219BBA /* GifAPI.swift */,
+				988665A31FCCB02700CBE463 /* PixabayAPI.swift */,
+			);
+			name = Targets;
+			sourceTree = "<group>";
+		};
+		985260591FCCB70600CAECE0 /* Generic Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				9816A3E01FCB9DE800219BBA /* GIF Search */,
+			);
+			name = "Generic Scenes";
+			sourceTree = "<group>";
+		};
 		98671C841FC5CB3A00578651 /* Alert Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -312,7 +334,6 @@
 				9825B25B1FC3E14200620398 /* Profile */,
 				98716A2C1FC4C45B008EDACE /* Create Prompt */,
 				9816A3F51FCBA87D00219BBA /* Select GIF */,
-				9816A3E01FCB9DE800219BBA /* GIF Search */,
 				98671C921FC5E71400578651 /* Create Prompt Reply */,
 				98671C871FC5D04500578651 /* Prompt Detail */,
 				9825B2491FC3C9C100620398 /* Prompts */,
@@ -394,6 +415,7 @@
 				9816A3D51FCB858700219BBA /* Webservice */,
 				9825B22F1FC3C73F00620398 /* Realm */,
 				98671C841FC5CB3A00578651 /* Alert Views */,
+				985260591FCCB70600CAECE0 /* Generic Scenes */,
 				98671C861FC5CB6900578651 /* Scenes */,
 				98671C851FC5CB5500578651 /* Resources */,
 				98B3FB891F532B4800B3ADC4 /* Onboarding */,
@@ -550,6 +572,8 @@
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftGifOrigin/SwiftGifOrigin.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyGif/SwiftyGif.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -561,6 +585,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftGifOrigin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyGif.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -577,7 +603,8 @@
 				98671C911FC5D5FB00578651 /* PromptDetailRouter.swift in Sources */,
 				9825B2551FC3C9DD00620398 /* PromptsListViewController.swift in Sources */,
 				9825B23D1FC3C7B700620398 /* LoginViewController.swift in Sources */,
-				9816A3F31FCBA52B00219BBA /* MainMovieListCell.swift in Sources */,
+				9816A3F31FCBA52B00219BBA /* GIFCollectionCell.swift in Sources */,
+				988665A21FCC9DA200CBE463 /* Swift+Gif.swift in Sources */,
 				98BAFA6E1F50B7DF00ED3B9D /* MasterTabBarViewController.swift in Sources */,
 				9816A3EA1FCB9E0B00219BBA /* GIFSearchModels.swift in Sources */,
 				9825B22C1FC3C5BF00620398 /* RealmLoginManager.swift in Sources */,
@@ -632,6 +659,7 @@
 				98BAFA6C1F50B76A00ED3B9D /* AppController.swift in Sources */,
 				98671C891FC5D07F00578651 /* PromptDetailViewController.swift in Sources */,
 				9825B2431FC3C86100620398 /* TabBarView.swift in Sources */,
+				988665A41FCCB02700CBE463 /* PixabayAPI.swift in Sources */,
 				98716A2E1FC4C493008EDACE /* CreatePromptViewController.swift in Sources */,
 				9816A3EE1FCB9ED200219BBA /* Throttler.swift in Sources */,
 				9825B2451FC3C86100620398 /* HomeEngine.swift in Sources */,

@@ -15,22 +15,21 @@ protocol CreatePromptLogic {
 
 protocol CreatePromptDataStore {
     var prompt: Prompt? { get set }
-    var gif: GIF? { get set }
+    var image: Imageable? { get set }
 }
 
 final class CreatePromptEngine: CreatePromptLogic, CreatePromptDataStore {
     
     var prompt: Prompt?
-    var gif: GIF? //Passed from SelectGIFViewController
+    var image: Imageable? //Passed from SelectGIFViewController
     
     lazy var commonRealm: RealmStorageContext = {
         return RealmStorageContext(configuration: RealmConfig.common)
     }()
     
     func createPrompt(request: CreatePrompt.Create.Request, completion: @escaping (CreatePromptResult) -> Void) {
-        guard let gif = gif else { completion(.missingGIF) ; return }
-        print("selected gif url: \(gif.url)")
-        let value = Prompt.valueDict(title: request.title, body: request.body)
+        guard let image = image else { completion(.missingGIF) ; return }
+        let value = Prompt.valueDict(title: request.title, body: request.body, imageURL: image.urlString)
         self.commonRealm
             .create(Prompt.self, value: value)
             .then { [weak self] (prompt) -> Void in

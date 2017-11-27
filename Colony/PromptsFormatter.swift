@@ -19,7 +19,9 @@ final class PromptsFormatter: PromptsFormattingLogic {
     }
     
     private func mapToDisplayedPrompts(_ prompts: [Prompt]) -> [DisplayedPrompt] {
-        return prompts.map({ return DisplayedPrompt(title: $0.title, body: $0.body) })
+        return prompts.map({
+            return DisplayedPrompt(title: $0.title, body: $0.body, imageURL: URL(string: $0.imageURL), replyCount: String($0.replies.count))
+        })
     }
     
 }

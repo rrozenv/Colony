@@ -1,5 +1,6 @@
 
 import Foundation
+import UIKit
 
 enum GIFSearch {
     
@@ -8,11 +9,11 @@ enum GIFSearch {
     }
     
     struct Response {
-        var gifs: [GIF]?
+        var images: [Imageable]?
     }
 
     struct ViewModel {
-        var displayedGIFS: [GIF]
+        var displayedImages: [Imageable]
     }
     
 }

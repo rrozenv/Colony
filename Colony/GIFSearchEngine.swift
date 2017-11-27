@@ -13,9 +13,9 @@ final class GIFSearchEngine: GIFSearchLogic {
     fileprivate let webservice = WebService.shared
     
     func makeQuery(request: GIFSearch.Request) {
-        let resource = GIF.GIFResource(for: request.query)
-        webservice.load(resource).then { [weak self] (gifs) -> Void in
-                self?.generateResponseForPresenter(with: gifs)
+        let resource = PixaImage.PixaImageResource(for: request.query)
+        webservice.load(resource).then { [weak self] (images) -> Void in
+                self?.generateResponseForPresenter(with: images)
             }.catch { [weak self] (error) in
                 self?.generateResponseForPresenter(with: nil)
                 if let httpError = error as? HTTPError {
@@ -26,8 +26,8 @@ final class GIFSearchEngine: GIFSearchLogic {
             }
     }
     
-    fileprivate func generateResponseForPresenter(with gifs: [GIF]?) {
-        let response = GIFSearch.Response(gifs: gifs ?? nil)
+    fileprivate func generateResponseForPresenter(with images: [Imageable]?) {
+        let response = GIFSearch.Response(images: images)
         self.presenter?.formatGIFS(response: response)
     }
     

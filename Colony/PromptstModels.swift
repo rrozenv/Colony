@@ -15,6 +15,8 @@ enum Prompts {
             struct DisplayedPrompt {
                 let title: String
                 let body: String
+                let imageURL: URL?
+                let replyCount: String
             }
             var prompts: [DisplayedPrompt]
         }

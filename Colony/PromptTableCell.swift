@@ -1,6 +1,7 @@
 
 import Foundation
 import UIKit
+import Kingfisher
 
 final class PromptTableCell: UITableViewCell {
     
@@ -23,7 +24,6 @@ final class PromptTableCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
     }
     
     func commonInit() {
@@ -37,10 +37,15 @@ final class PromptTableCell: UITableViewCell {
     func configure(with prompt: DisplayedPrompt) {
         promptView.titleLabel.text = prompt.title
         promptView.replyTextLabel.text = "replies"
-        promptView.replyCountLabel.text = "10"
+        promptView.replyCountLabel.text = prompt.replyCount
+        if let imageURL = prompt.imageURL {
+            promptView.imageView.kf.setImage(with: imageURL)
+        }
     }
     
-    override func prepareForReuse() { }
+    override func prepareForReuse() {
+        promptView.reset()
+    }
     
 }
 

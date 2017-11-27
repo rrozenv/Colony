@@ -21,20 +21,14 @@ final class PromptsListEngine: PromptsListBusinessLogic, PromptsListDataStore {
     }()
     
     func fetchPrompts(request: Prompts.FetchPrompts.Request) {
-        self.commonRealm
-            .fetch(Prompt.self)
-            .then { [weak self] (prompts) -> Void in
-                self?.prompts = prompts
-                let response = Prompts.FetchPrompts.Response(prompts: prompts)
-                self?.formatter?.formatPrompts(response: response)
-            }
-            .catch { (error) in
-                if let realmError = error as? RealmError {
-                    print(realmError.description)
-                } else {
-                    print(error.localizedDescription)
-                }
-            }
+        let prompts = self.commonRealm.fetch(Prompt.self)
+        self.prompts = prompts
+        self.generateResponseForPresenter(with: prompts)
+    }
+    
+    fileprivate func generateResponseForPresenter(with prompts: [Prompt]) {
+        let response = Prompts.FetchPrompts.Response(prompts: prompts)
+        self.formatter?.formatPrompts(response: response)
     }
 
 }

@@ -2,6 +2,7 @@
 import Foundation
 
 protocol PromptDetailLogic {
+    func checkIfUserReplied() -> Bool
     func fetchPromptReplies(request: PromptDetail.FetchPromptReplies.Request)
     func saveUserCastedScore(request: PromptDetail.SaveUserScoreForReply.Request)
 }
@@ -17,6 +18,12 @@ final class PromptDetailEngine: PromptDetailLogic, PromptDetailDataStore {
     lazy var commonRealm: RealmStorageContext = {
         return RealmStorageContext(configuration: RealmConfig.common)
     }()
+    
+    func checkIfUserReplied() -> Bool {
+        guard let user = User.loadUser() else { fatalError() }
+        let predicate = NSPredicate(format: "userId = %@", user.id)
+        return prompt.replies.filter(predicate).count >= 1
+    }
     
     func fetchPromptReplies(request: PromptDetail.FetchPromptReplies.Request) {
         let replies = Array(prompt.replies)

@@ -32,8 +32,8 @@ class CreatePromptRouter: NSObject, CreatePromptRoutingLogic {
     
     func navigateToSelectGIF(source: CreatePromptViewController, destination: SelectGIFViewController) {
         source.present(destination, animated: true, completion: nil)
-        destination.didSelectGIF = { [weak self] (gif) in
-            self?.dataStore?.gif = gif
+        destination.didSelectImage = { [weak self] (image) in
+            self?.dataStore?.image = image
         }
     }
     

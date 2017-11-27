@@ -75,6 +75,9 @@ extension PromptDetailViewController {
 extension PromptDetailViewController {
     
     func fetchPromptReplies() {
+        guard let userDidReply = engine?.checkIfUserReplied(), userDidReply else {
+            print("User has not replied yet.") ; return
+        }
         let request = PromptDetail.FetchPromptReplies.Request()
         engine?.fetchPromptReplies(request: request)
     }

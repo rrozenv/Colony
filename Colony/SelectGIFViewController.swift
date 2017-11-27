@@ -9,7 +9,7 @@ final class SelectGIFViewController: UIViewController {
     var headerView: UIView!
     var backButton: UIButton!
     var doneButton: UIButton!
-    var didSelectGIF: ((GIF) -> Void)?
+    var didSelectImage: ((Imageable) -> Void)?
     
     var router:
     (SelectGIFRoutingLogic &
@@ -66,8 +66,8 @@ final class SelectGIFViewController: UIViewController {
 
 extension SelectGIFViewController: GIFSearchControllerDelegate {
     
-    func didSelectGIF(_ gif: GIF) {
-        self.didSelectGIF?(gif)
+    func didSelectImage(_ image: Imageable) {
+        self.didSelectImage?(image)
     }
     
 }

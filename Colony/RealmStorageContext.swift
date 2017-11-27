@@ -34,7 +34,7 @@ public struct Sorted {
 protocol RealmStorageFunctions {
     func save(object: Object) -> Promise<Void>
     func create<T: Object>(_ model: T.Type, value: [String: Any]?) -> Promise<T>
-    func fetch<T: Object>(_ model: T.Type, predicate: NSPredicate?, sorted: Sorted?) -> Promise<[T]>
+    func fetch<T: Object>(_ model: T.Type, predicate: NSPredicate?, sorted: Sorted?) -> [T]
     func deleteAll() -> Promise<Void>
     func delete(object: Object) -> Promise<Void>
 }
@@ -86,20 +86,20 @@ class RealmStorageContext: RealmStorageFunctions {
         }
     }
     
-    func fetch<T: Object>(_ model: T.Type, predicate: NSPredicate? = nil, sorted: Sorted? = nil) -> Promise<[T]> {
-        return Promise { fullfill, reject in
-            var objects = self.realm.objects(model as Object.Type)
-            
-            if let predicate = predicate {
-                objects = objects.filter(predicate)
-            }
-            
-            if let sorted = sorted {
-                objects = objects.sorted(byKeyPath: sorted.key, ascending: sorted.ascending)
-            }
-            
-            fullfill(objects.flatMap { $0 as? T })
+    func fetch<T: Object>(_ model: T.Type, predicate: NSPredicate? = nil, sorted: Sorted? = nil) -> [T] {
+        
+        var objects = self.realm.objects(model as Object.Type)
+        
+        if let predicate = predicate {
+            objects = objects.filter(predicate)
         }
+        
+        if let sorted = sorted {
+            objects = objects.sorted(byKeyPath: sorted.key, ascending: sorted.ascending)
+        }
+        
+        return (objects.flatMap { $0 as? T })
+        
     }
     
     func update(block: @escaping () -> Void) -> Promise<Void> {

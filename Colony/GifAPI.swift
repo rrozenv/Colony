@@ -4,6 +4,7 @@ import Moya
 
 struct Secrets {
     static let API_Key = "vEuTgt5WkT4zs4hbPe6CXjEEiMIdTZXm"
+    static let pixabayAPI_Key = "7195286-a0abf18d1b041a5e368666cee"
 }
 
 enum GifAPI {

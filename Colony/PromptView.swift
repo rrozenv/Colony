@@ -61,21 +61,21 @@ final class PromptView: UIView {
         }
     }
     
-    func setupReplyCountLabelProperties() {
+    fileprivate func setupReplyCountLabelProperties() {
         replyCountLabel = UILabel()
         replyCountLabel.textColor = UIColor.black
         replyCountLabel.numberOfLines = 1
         replyCountLabel.font = FontBook.AvenirHeavy.of(size: 13)
     }
     
-    func setupReplyTextLabelProperties() {
+    fileprivate func setupReplyTextLabelProperties() {
         replyTextLabel = UILabel()
         replyTextLabel.textColor = UIColor.black
         replyTextLabel.numberOfLines = 0
         replyTextLabel.font = FontBook.AvenirMedium.of(size: 12)
     }
     
-    func setupReplyLabelsStackView() {
+    fileprivate func setupReplyLabelsStackView() {
         let views: [UILabel] = [replyCountLabel, replyTextLabel]
         replyLabelsStackView = UIStackView(arrangedSubviews: views)
         replyLabelsStackView.spacing = 4.0
@@ -118,7 +118,7 @@ final class PromptView: UIView {
         }
     }
     
-    func setupTitleLabel() {
+    fileprivate func setupTitleLabel() {
         titleLabel = UILabel()
         titleLabel.textColor = UIColor.white
         titleLabel.numberOfLines = 0
@@ -130,6 +130,13 @@ final class PromptView: UIView {
             make.bottom.equalTo(topContainerView).offset(-20)
             make.right.equalTo(topContainerView).offset(-20)
         }
+    }
+    
+    func reset() {
+        imageView.image = nil
+        titleLabel.text = nil
+        replyTextLabel.text = nil
+        replyCountLabel.text = nil
     }
     
 }

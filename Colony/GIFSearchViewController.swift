@@ -4,7 +4,7 @@ import UIKit
 import SnapKit
 
 protocol GIFSearchControllerDelegate: class {
-    func didSelectGIF(_ gif: GIF)
+    func didSelectImage(_ image: Imageable)
 }
 
 protocol GIFSDisplayLogic: class {
@@ -19,7 +19,7 @@ final class GIFSearchViewController: UIViewController, GIFSDisplayLogic {
     
     var collectionView: UICollectionView!
     var collectionViewGridLayout: UICollectionViewFlowLayout!
-    var displayedGIFS = [GIF]()
+    var displayedGIFS = [Imageable]()
     
     var engine: GIFSearchLogic?
     weak var delegate: GIFSearchControllerDelegate?
@@ -84,7 +84,7 @@ final class GIFSearchViewController: UIViewController, GIFSDisplayLogic {
             let shouldNotSearch = (0...2).contains(searchText.count)
             //let shouldNotSearch = 0...3 ~= searchText.characters.count
             if shouldNotSearch {
-                self.displayedGIFS = [GIF]()
+                self.displayedGIFS = [Imageable]()
                 self.collectionView.reloadData()
             } else {
                 self.createRequestWithSearch(query: searchText)
@@ -103,14 +103,14 @@ final class GIFSearchViewController: UIViewController, GIFSDisplayLogic {
     func didTapClearSearch(_ sender: UIButton) {
         self.searchTextField.text = nil
         self.shouldDisplayClearSearchButton("")
-        self.displayedGIFS = [GIF]()
+        self.displayedGIFS = [Imageable]()
         self.collectionView.reloadData()
     }
     
     //MARK: Input
     
     func displayGIFS(viewModel: GIFSearch.ViewModel) {
-        self.displayedGIFS = viewModel.displayedGIFS
+        self.displayedGIFS = viewModel.displayedImages
         self.collectionView.reloadData()
     }
 
@@ -175,7 +175,7 @@ extension GIFSearchViewController {
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.register(MainMovieListCell.self, forCellWithReuseIdentifier: MainMovieListCell.reuseIdentifier)
+        collectionView.register(GIFCollectionCell.self, forCellWithReuseIdentifier: GIFCollectionCell.reuseIdentifier)
         
         self.view.addSubview(collectionView)
         collectionView.snp.makeConstraints { (make) in
@@ -197,8 +197,9 @@ extension GIFSearchViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainMovieListCell.reuseIdentifier, for: indexPath) as! MainMovieListCell
-        cell.titleLabel.text = displayedGIFS[indexPath.item].url.absoluteString
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GIFCollectionCell.reuseIdentifier, for: indexPath) as! GIFCollectionCell
+        let image = displayedGIFS[indexPath.item]
+        cell.configure(with: image)
         return cell
     }
     
@@ -207,8 +208,8 @@ extension GIFSearchViewController: UICollectionViewDataSource {
 extension GIFSearchViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let gif = self.displayedGIFS[indexPath.row]
-        delegate?.didSelectGIF(gif)
+        let image = self.displayedGIFS[indexPath.row]
+        delegate?.didSelectImage(image)
     }
     
 }
