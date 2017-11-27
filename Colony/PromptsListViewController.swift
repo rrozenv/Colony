@@ -20,6 +20,7 @@ final class PromptsListViewController: UIViewController {
     
     var tableView: UITableView!
     var displayedPrompts = [DisplayedPrompt]()
+    var webservice = WebService.shared
     
     //var collectionViewTopInset: CGFloat?
     var createPromptButton: UIButton!

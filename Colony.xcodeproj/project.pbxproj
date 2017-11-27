@@ -9,6 +9,18 @@
 /* Begin PBXBuildFile section */
 		9816A3D11FCB41E200219BBA /* PromptTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816A3D01FCB41E200219BBA /* PromptTableCell.swift */; };
 		9816A3D41FCB42EC00219BBA /* PromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816A3D31FCB42EC00219BBA /* PromptView.swift */; };
+		9816A3D71FCB85B000219BBA /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816A3D61FCB85B000219BBA /* Webservice.swift */; };
+		9816A3D91FCB861800219BBA /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816A3D81FCB861800219BBA /* Resource.swift */; };
+		9816A3DB1FCB867C00219BBA /* GifAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816A3DA1FCB867C00219BBA /* GifAPI.swift */; };
+		9816A3DD1FCB887600219BBA /* GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816A3DC1FCB887600219BBA /* GIF.swift */; };
+		9816A3E61FCB9E0B00219BBA /* GIFSearchEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816A3E11FCB9E0B00219BBA /* GIFSearchEngine.swift */; };
+		9816A3E81FCB9E0B00219BBA /* GIFSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816A3E31FCB9E0B00219BBA /* GIFSearchPresenter.swift */; };
+		9816A3E91FCB9E0B00219BBA /* GIFSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816A3E41FCB9E0B00219BBA /* GIFSearchViewController.swift */; };
+		9816A3EA1FCB9E0B00219BBA /* GIFSearchModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816A3E51FCB9E0B00219BBA /* GIFSearchModels.swift */; };
+		9816A3EC1FCB9EB500219BBA /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816A3EB1FCB9EB400219BBA /* SearchTextField.swift */; };
+		9816A3EE1FCB9ED200219BBA /* Throttler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816A3ED1FCB9ED200219BBA /* Throttler.swift */; };
+		9816A3F21FCBA52B00219BBA /* MainMovieListGridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816A3F01FCBA52B00219BBA /* MainMovieListGridLayout.swift */; };
+		9816A3F31FCBA52B00219BBA /* MainMovieListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816A3F11FCBA52B00219BBA /* MainMovieListCell.swift */; };
 		9825B22C1FC3C5BF00620398 /* RealmLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825B22B1FC3C5BF00620398 /* RealmLoginManager.swift */; };
 		9825B22E1FC3C6AD00620398 /* RealmConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825B22D1FC3C6AD00620398 /* RealmConfiguration.swift */; };
 		9825B2321FC3C77300620398 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825B2311FC3C77300620398 /* User.swift */; };
@@ -68,6 +80,18 @@
 		6D2FDA25E849A289AB851B10 /* Pods-Colony.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Colony.release.xcconfig"; path = "Pods/Target Support Files/Pods-Colony/Pods-Colony.release.xcconfig"; sourceTree = "<group>"; };
 		9816A3D01FCB41E200219BBA /* PromptTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptTableCell.swift; sourceTree = "<group>"; };
 		9816A3D31FCB42EC00219BBA /* PromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptView.swift; sourceTree = "<group>"; };
+		9816A3D61FCB85B000219BBA /* Webservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
+		9816A3D81FCB861800219BBA /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		9816A3DA1FCB867C00219BBA /* GifAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifAPI.swift; sourceTree = "<group>"; };
+		9816A3DC1FCB887600219BBA /* GIF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIF.swift; sourceTree = "<group>"; };
+		9816A3E11FCB9E0B00219BBA /* GIFSearchEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GIFSearchEngine.swift; sourceTree = "<group>"; };
+		9816A3E31FCB9E0B00219BBA /* GIFSearchPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GIFSearchPresenter.swift; sourceTree = "<group>"; };
+		9816A3E41FCB9E0B00219BBA /* GIFSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GIFSearchViewController.swift; sourceTree = "<group>"; };
+		9816A3E51FCB9E0B00219BBA /* GIFSearchModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GIFSearchModels.swift; sourceTree = "<group>"; };
+		9816A3EB1FCB9EB400219BBA /* SearchTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
+		9816A3ED1FCB9ED200219BBA /* Throttler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Throttler.swift; sourceTree = "<group>"; };
+		9816A3F01FCBA52B00219BBA /* MainMovieListGridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMovieListGridLayout.swift; sourceTree = "<group>"; };
+		9816A3F11FCBA52B00219BBA /* MainMovieListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMovieListCell.swift; sourceTree = "<group>"; };
 		9825B22B1FC3C5BF00620398 /* RealmLoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmLoginManager.swift; sourceTree = "<group>"; };
 		9825B22D1FC3C6AD00620398 /* RealmConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmConfiguration.swift; sourceTree = "<group>"; };
 		9825B2311FC3C77300620398 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -143,6 +167,46 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		9816A3D51FCB858700219BBA /* Webservice */ = {
+			isa = PBXGroup;
+			children = (
+				9816A3D61FCB85B000219BBA /* Webservice.swift */,
+				9816A3ED1FCB9ED200219BBA /* Throttler.swift */,
+				9816A3D81FCB861800219BBA /* Resource.swift */,
+				9816A3DA1FCB867C00219BBA /* GifAPI.swift */,
+			);
+			name = Webservice;
+			sourceTree = "<group>";
+		};
+		9816A3E01FCB9DE800219BBA /* GIF Search */ = {
+			isa = PBXGroup;
+			children = (
+				9816A3EF1FCBA51F00219BBA /* Views */,
+				9816A3E41FCB9E0B00219BBA /* GIFSearchViewController.swift */,
+				9816A3E11FCB9E0B00219BBA /* GIFSearchEngine.swift */,
+				9816A3E51FCB9E0B00219BBA /* GIFSearchModels.swift */,
+				9816A3E31FCB9E0B00219BBA /* GIFSearchPresenter.swift */,
+			);
+			name = "GIF Search";
+			sourceTree = "<group>";
+		};
+		9816A3EF1FCBA51F00219BBA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9816A3F01FCBA52B00219BBA /* MainMovieListGridLayout.swift */,
+				9816A3F11FCBA52B00219BBA /* MainMovieListCell.swift */,
+				9816A3EB1FCB9EB400219BBA /* SearchTextField.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		9816A3F51FCBA87D00219BBA /* Create GIF */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Create GIF";
+			sourceTree = "<group>";
+		};
 		9825B22F1FC3C73F00620398 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +267,7 @@
 				9825B2311FC3C77300620398 /* User.swift */,
 				9825B2561FC3CBCC00620398 /* Prompt.swift */,
 				98EA482D1FC9DCE2008EF317 /* PromptReply.swift */,
+				9816A3DC1FCB887600219BBA /* GIF.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -240,6 +305,8 @@
 				9825B23E1FC3C84B00620398 /* Home */,
 				9825B25B1FC3E14200620398 /* Profile */,
 				98716A2C1FC4C45B008EDACE /* Create Prompt */,
+				9816A3F51FCBA87D00219BBA /* Create GIF */,
+				9816A3E01FCB9DE800219BBA /* GIF Search */,
 				98671C921FC5E71400578651 /* Create Prompt Reply */,
 				98671C871FC5D04500578651 /* Prompt Detail */,
 				9825B2491FC3C9C100620398 /* Prompts */,
@@ -318,6 +385,7 @@
 				98BAFA591F50B75B00ED3B9D /* AppDelegate.swift */,
 				9825B2301FC3C74700620398 /* App Controller */,
 				9825B2581FC3CC9C00620398 /* Models */,
+				9816A3D51FCB858700219BBA /* Webservice */,
 				9825B22F1FC3C73F00620398 /* Realm */,
 				98671C841FC5CB3A00578651 /* Alert Views */,
 				98671C861FC5CB6900578651 /* Scenes */,
@@ -503,7 +571,9 @@
 				98671C911FC5D5FB00578651 /* PromptDetailRouter.swift in Sources */,
 				9825B2551FC3C9DD00620398 /* PromptsListViewController.swift in Sources */,
 				9825B23D1FC3C7B700620398 /* LoginViewController.swift in Sources */,
+				9816A3F31FCBA52B00219BBA /* MainMovieListCell.swift in Sources */,
 				98BAFA6E1F50B7DF00ED3B9D /* MasterTabBarViewController.swift in Sources */,
+				9816A3EA1FCB9E0B00219BBA /* GIFSearchModels.swift in Sources */,
 				9825B22C1FC3C5BF00620398 /* RealmLoginManager.swift in Sources */,
 				9825B23B1FC3C7B700620398 /* LoginRouter.swift in Sources */,
 				9825B2391FC3C7B700620398 /* LoginViewControllerEngine.swift in Sources */,
@@ -513,20 +583,27 @@
 				9825B2541FC3C9DD00620398 /* PromptsRouter.swift in Sources */,
 				98EA482E1FC9DCE2008EF317 /* PromptReply.swift in Sources */,
 				98716A361FC4C55C008EDACE /* CreatePromptRouter.swift in Sources */,
+				9816A3D91FCB861800219BBA /* Resource.swift in Sources */,
 				98EA48331FC9E9D0008EF317 /* ScoreCollectionCell.swift in Sources */,
 				98716A341FC4C4CC008EDACE /* CreatePromptModels.swift in Sources */,
 				98BAFA741F50C53B00ED3B9D /* OnboardingScrollViewModel.swift in Sources */,
 				98671C981FC5ECE900578651 /* CreatePromptReplyViewController.swift in Sources */,
+				9816A3E61FCB9E0B00219BBA /* GIFSearchEngine.swift in Sources */,
+				9816A3DB1FCB867C00219BBA /* GifAPI.swift in Sources */,
 				9825B25A1FC3DA1F00620398 /* FontBook.swift in Sources */,
+				9816A3E81FCB9E0B00219BBA /* GIFSearchPresenter.swift in Sources */,
 				98BAFA5A1F50B75B00ED3B9D /* AppDelegate.swift in Sources */,
 				98671C8D1FC5D21B00578651 /* PromptDetailModels.swift in Sources */,
 				98671C8F1FC5D2C600578651 /* PromptDetailFormatter.swift in Sources */,
 				98671C8B1FC5D0BE00578651 /* PromptDetailEngine.swift in Sources */,
+				9816A3DD1FCB887600219BBA /* GIF.swift in Sources */,
 				9825B2521FC3C9DD00620398 /* PromptsEngine.swift in Sources */,
+				9816A3E91FCB9E0B00219BBA /* GIFSearchViewController.swift in Sources */,
 				9816A3D11FCB41E200219BBA /* PromptTableCell.swift in Sources */,
 				98EA48301FC9E48D008EF317 /* PromptReplyTableCell.swift in Sources */,
 				9825B2461FC3C86100620398 /* HomeRouter.swift in Sources */,
 				9825B2571FC3CBCC00620398 /* Prompt.swift in Sources */,
+				9816A3EC1FCB9EB500219BBA /* SearchTextField.swift in Sources */,
 				9825B2611FC3E15800620398 /* SettingsEngine.swift in Sources */,
 				9825B2601FC3E15800620398 /* SettingsPresenter.swift in Sources */,
 				9825B2631FC3E15800620398 /* SettingsSharedObjects.swift in Sources */,
@@ -538,6 +615,7 @@
 				98671C961FC5E8D300578651 /* CreatePromptReplyModels.swift in Sources */,
 				9825B2321FC3C77300620398 /* User.swift in Sources */,
 				9825B23C1FC3C7B700620398 /* LoginPresenter.swift in Sources */,
+				9816A3F21FCBA52B00219BBA /* MainMovieListGridLayout.swift in Sources */,
 				9825B23A1FC3C7B700620398 /* LoginModels.swift in Sources */,
 				9825B2441FC3C86100620398 /* HomeViewController.swift in Sources */,
 				98671C941FC5E77700578651 /* CreatePromptReplyEngine.swift in Sources */,
@@ -547,9 +625,11 @@
 				98671C891FC5D07F00578651 /* PromptDetailViewController.swift in Sources */,
 				9825B2431FC3C86100620398 /* TabBarView.swift in Sources */,
 				98716A2E1FC4C493008EDACE /* CreatePromptViewController.swift in Sources */,
+				9816A3EE1FCB9ED200219BBA /* Throttler.swift in Sources */,
 				9825B2451FC3C86100620398 /* HomeEngine.swift in Sources */,
 				98BAFA701F50B89F00ED3B9D /* OnboardingScrollViewController.swift in Sources */,
 				98716A301FC4C4A4008EDACE /* CreatePromptEngine.swift in Sources */,
+				9816A3D71FCB85B000219BBA /* Webservice.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
