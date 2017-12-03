@@ -72,6 +72,7 @@
 		98BAFA701F50B89F00ED3B9D /* OnboardingScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BAFA6F1F50B89F00ED3B9D /* OnboardingScrollViewController.swift */; };
 		98BAFA721F50B9C000ED3B9D /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BAFA711F50B9C000ED3B9D /* OnboardingView.swift */; };
 		98BAFA741F50C53B00ED3B9D /* OnboardingScrollViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BAFA731F50C53B00ED3B9D /* OnboardingScrollViewModel.swift */; };
+		98BC144D1FD1CB4700DDB217 /* OutpostAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BC144C1FD1CB4700DDB217 /* OutpostAPI.swift */; };
 		98EA482E1FC9DCE2008EF317 /* PromptReply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EA482D1FC9DCE2008EF317 /* PromptReply.swift */; };
 		98EA48301FC9E48D008EF317 /* PromptReplyTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EA482F1FC9E48D008EF317 /* PromptReplyTableCell.swift */; };
 		98EA48331FC9E9D0008EF317 /* ScoreCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EA48321FC9E9D0008EF317 /* ScoreCollectionCell.swift */; };
@@ -149,6 +150,7 @@
 		98BAFA6F1F50B89F00ED3B9D /* OnboardingScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingScrollViewController.swift; sourceTree = "<group>"; };
 		98BAFA711F50B9C000ED3B9D /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		98BAFA731F50C53B00ED3B9D /* OnboardingScrollViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingScrollViewModel.swift; sourceTree = "<group>"; };
+		98BC144C1FD1CB4700DDB217 /* OutpostAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutpostAPI.swift; sourceTree = "<group>"; };
 		98EA482D1FC9DCE2008EF317 /* PromptReply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptReply.swift; sourceTree = "<group>"; };
 		98EA482F1FC9E48D008EF317 /* PromptReplyTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptReplyTableCell.swift; sourceTree = "<group>"; };
 		98EA48321FC9E9D0008EF317 /* ScoreCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCollectionCell.swift; sourceTree = "<group>"; };
@@ -298,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				9816A3DA1FCB867C00219BBA /* GifAPI.swift */,
+				98BC144C1FD1CB4700DDB217 /* OutpostAPI.swift */,
 				988665A31FCCB02700CBE463 /* PixabayAPI.swift */,
 			);
 			name = Targets;
@@ -565,12 +568,19 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Colony/Pods-Colony-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftGifOrigin/SwiftGifOrigin.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyGif/SwiftyGif.framework",
@@ -578,12 +588,19 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftGifOrigin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyGif.framework",
@@ -663,6 +680,7 @@
 				98716A2E1FC4C493008EDACE /* CreatePromptViewController.swift in Sources */,
 				9816A3EE1FCB9ED200219BBA /* Throttler.swift in Sources */,
 				9825B2451FC3C86100620398 /* HomeEngine.swift in Sources */,
+				98BC144D1FD1CB4700DDB217 /* OutpostAPI.swift in Sources */,
 				98BAFA701F50B89F00ED3B9D /* OnboardingScrollViewController.swift in Sources */,
 				98716A301FC4C4A4008EDACE /* CreatePromptEngine.swift in Sources */,
 				9816A3D71FCB85B000219BBA /* Webservice.swift in Sources */,

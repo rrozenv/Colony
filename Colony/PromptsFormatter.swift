@@ -1,6 +1,7 @@
 
 import Foundation
 import UIKit
+import RxSwift
 
 typealias DisplayedPrompt = Prompts.FetchPrompts.ViewModel.DisplayedPrompt
 
@@ -14,13 +15,13 @@ final class PromptsFormatter: PromptsFormattingLogic {
  
     func formatPrompts(response: Prompts.FetchPrompts.Response) {
         let displayedPrompts = mapToDisplayedPrompts(response.prompts)
-        let viewModel = Prompts.FetchPrompts.ViewModel(prompts: displayedPrompts)
-        viewController?.displayPrompts(viewModel: viewModel)
+        //let viewModel = Prompts.FetchPrompts.ViewModel(prompts: displayedPrompts)
+        viewController?.displayedPrompts.value = displayedPrompts
     }
     
-    private func mapToDisplayedPrompts(_ prompts: [Prompt]) -> [DisplayedPrompt] {
+    private func mapToDisplayedPrompts(_ prompts: [PromptT]) -> [DisplayedPrompt] {
         return prompts.map({
-            return DisplayedPrompt(title: $0.title, body: $0.body, imageURL: URL(string: $0.imageURL), replyCount: String($0.replies.count))
+            return DisplayedPrompt(title: $0.title, body: $0.body, imageURL: URL(string: $0.imageUrl))
         })
     }
     

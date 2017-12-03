@@ -1,5 +1,7 @@
 
 import UIKit
+import FBSDKLoginKit
+import FBSDKCoreKit
 
 class TextField: UITextField {
     
@@ -86,6 +88,18 @@ class LoginViewController: UIViewController {
         return button
     }()
     
+    lazy var facebookButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = UIColor.red
+        button.setTitle("Facebook", for: .normal)
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.titleLabel?.font = UIFont(name: "Avenir-Heavy", size: 14.0)
+        button.layer.cornerRadius = 4.0
+        button.layer.masksToBounds = true
+        button.addTarget(self, action: #selector(handleFacebookRegistration), for: .touchUpInside)
+        return button
+    }()
+    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         setup()
@@ -125,6 +139,16 @@ class LoginViewController: UIViewController {
         print("Login diassapered")
 //        NotificationCenter.default.removeObserver(self, name: Notification.Name.UIKeyboardWillShow, object: nil)
 //        NotificationCenter.default.removeObserver(self, name: Notification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    func handleFacebookRegistration() {
+        let loginManager = FBSDKLoginManager()
+        let facebookReadPermissions = ["public_profile", "email", "user_friends"]
+        loginManager.logIn(withReadPermissions: facebookReadPermissions, from: self) { (result, error) in
+            let token = result?.token
+            print(token!)
+            self.engine?.createUserWithFacebook()
+        }
     }
     
     func handleNewUserRegistration() {
@@ -180,7 +204,7 @@ extension LoginViewController: UITextFieldDelegate {
         loginButton.heightAnchor.constraint(equalToConstant: 45.0).isActive = true
         loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30.0).isActive = true
         loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30.0).isActive = true
-        loginButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -98.0).isActive = true 
+        loginButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -98.0).isActive = true
         
         view.addSubview(registerButton)
         registerButton.translatesAutoresizingMaskIntoConstraints = false
@@ -189,11 +213,18 @@ extension LoginViewController: UITextFieldDelegate {
         registerButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30.0).isActive = true
         registerButton.bottomAnchor.constraint(equalTo: loginButton.topAnchor, constant: -15).isActive = true
         
+        view.addSubview(facebookButton)
+        facebookButton.translatesAutoresizingMaskIntoConstraints = false
+        facebookButton.heightAnchor.constraint(equalToConstant: 45.0).isActive = true
+        facebookButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30.0).isActive = true
+        facebookButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30.0).isActive = true
+        facebookButton.bottomAnchor.constraint(equalTo: registerButton.topAnchor, constant: -15).isActive = true
+        
         view.addSubview(stackView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30.0).isActive = true
         stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30.0).isActive = true
-        stackView.bottomAnchor.constraint(equalTo: registerButton.topAnchor, constant: -10.0).isActive = true
+        stackView.bottomAnchor.constraint(equalTo: facebookButton.topAnchor, constant: -10.0).isActive = true
         stackView.heightAnchor.constraint(equalToConstant: 155).isActive = true
     }
 

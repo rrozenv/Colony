@@ -7,7 +7,7 @@ enum Prompts {
         struct Request { }
         
         struct Response {
-            var prompts: [Prompt]
+            var prompts: [PromptT]
         }
         
         //Presenter Output -> View Controller Input
@@ -16,7 +16,7 @@ enum Prompts {
                 let title: String
                 let body: String
                 let imageURL: URL?
-                let replyCount: String
+                //let replyCount: String
             }
             var prompts: [DisplayedPrompt]
         }

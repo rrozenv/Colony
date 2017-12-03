@@ -23,6 +23,10 @@ class User: Object {
         return "id"
     }
     
+    class func valueDict(name: String, email: String) -> [String: Any] {
+        return ["id": SyncUser.current!.identity!, "name": name, "email": email]
+    }
+    
     class func loadUser(_ name: String? = nil, _ email: String? = nil) -> User? {
         let commonRealm =  try! Realm(configuration: RealmConfig.common.configuration)
         var user = commonRealm.objects(User.self).filter(NSPredicate(format: "id = %@", SyncUser.current!.identity!)).first

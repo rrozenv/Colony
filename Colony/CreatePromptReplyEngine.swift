@@ -22,7 +22,7 @@ final class CreatePromptReplyEngine: CreatePromptReplyLogic, CreatePromptReplyDa
     }()
     
     func createPrompt(request: CreatePromptReply.Create.Request, completion: @escaping (Bool) -> Void) {
-        guard let user = User.loadUser() else { fatalError() }
+        guard let user = User.loadCurrentUser() else { fatalError() }
         let promptReply = PromptReply(user: user, prompt: prompt, body: request.body)
         self.commonRealm
             .update { [weak self] in

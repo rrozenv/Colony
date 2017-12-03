@@ -2,6 +2,7 @@
 import Foundation
 import RealmSwift
 import PromiseKit
+import FBSDKCoreKit
 
 final class RealmLoginManager {
     
@@ -33,6 +34,20 @@ final class RealmLoginManager {
     
     class func register(email: String, password: String) -> Promise<SyncUser> {
         let credentials = SyncCredentials.usernamePassword(username: email, password: password, register: true)
+        return Promise { fulfill, reject in
+            SyncUser.logIn(with: credentials, server: Constants.syncAuthURL) { syncUser, error in
+                if let user = syncUser {
+                    fulfill(user)
+                }
+                if let error = error {
+                    reject(error)
+                }
+            }
+        }
+    }
+    
+    class func registerWithFacebook() -> Promise<SyncUser> {
+        let credentials = SyncCredentials.facebook(token: FBSDKAccessToken.current().tokenString)
         return Promise { fulfill, reject in
             SyncUser.logIn(with: credentials, server: Constants.syncAuthURL) { syncUser, error in
                 if let user = syncUser {

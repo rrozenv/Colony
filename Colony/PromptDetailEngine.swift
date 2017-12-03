@@ -15,12 +15,17 @@ final class PromptDetailEngine: PromptDetailLogic, PromptDetailDataStore {
     
     var formatter: PromptDetailFormattingLogic?
     var prompt: Prompt!
+    
+    lazy var user: User? = {
+        return User.loadCurrentUser()
+    }()
+    
     lazy var commonRealm: RealmStorageContext = {
         return RealmStorageContext(configuration: RealmConfig.common)
     }()
     
     func checkIfUserReplied() -> Bool {
-        guard let user = User.loadUser() else { fatalError() }
+        guard let user = user else { fatalError() }
         let predicate = NSPredicate(format: "userId = %@", user.id)
         return prompt.replies.filter(predicate).count >= 1
     }
@@ -33,7 +38,7 @@ final class PromptDetailEngine: PromptDetailLogic, PromptDetailDataStore {
     
     func saveUserCastedScore(request: PromptDetail.SaveUserScoreForReply.Request) {
         //1. Find reply
-        guard let user = User.loadCurrentUser(),
+        guard let user = user,
               let reply = prompt.replies.filter(NSPredicate(format: "uniqueID = %@", request.replyId)).first else { return }
         
         //2. Create UserScore

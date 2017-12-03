@@ -33,11 +33,11 @@ extension PixabayAPI: TargetType {
     
     // 6:
     var parameters: [String: Any]? {
+        var parameters = [String: Any]()
+        parameters["key"] = Secrets.pixabayAPI_Key
         switch self {
         case .search(query: let query):
-            var parameters = [String: Any]()
             parameters["q"] = "\(query)"
-            parameters["key"] = Secrets.pixabayAPI_Key
             return parameters
         }
     }

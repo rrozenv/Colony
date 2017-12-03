@@ -37,7 +37,7 @@ final class PromptTableCell: UITableViewCell {
     func configure(with prompt: DisplayedPrompt) {
         promptView.titleLabel.text = prompt.title
         promptView.replyTextLabel.text = "replies"
-        promptView.replyCountLabel.text = prompt.replyCount
+        //promptView.replyCountLabel.text = prompt.replyCount
         if let imageURL = prompt.imageURL {
             promptView.imageView.kf.setImage(with: imageURL)
         }

@@ -26,7 +26,7 @@ class PromptsRouter: NSObject, PromptsRoutingLogic, PromptsDataPassing {
     func passDataToPromptDetail(sourceDS: PromptsListDataStore, destinationDS: inout PromptDetailDataStore) {
         let selectedRow = viewController?.state.selectedRow!
         let selectedPrompt = sourceDS.prompts[selectedRow!]
-        destinationDS.prompt = selectedPrompt
+        //destinationDS.prompt = selectedPrompt
     }
     
     // MARK: Navigation

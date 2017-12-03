@@ -26,6 +26,29 @@ enum RealmError: Error {
     }
 }
 
+final class FetchedResults<T: Persistable> {
+    let results: Results<T.ManagedObject>
+    
+    var count: Int {
+        return results.count
+    }
+    
+    init(results: Results<T.ManagedObject>) {
+        self.results = results
+    }
+    
+    func value(at index: Int) -> T {
+        return T(managedObject: results[index])
+    }
+    
+    func mapResults() -> [T] {
+        let mapped = self.results.map { (managedObject) in
+            return T(managedObject: managedObject)
+        }
+        return Array(mapped)
+    }
+}
+
 public struct Sorted {
     var key: String
     var ascending: Bool = true
@@ -56,6 +79,19 @@ class RealmStorageContext: RealmStorageFunctions {
                 }
             } catch {
                 reject(RealmError.createFailed(model._realmObjectName() ?? nil))
+            }
+        }
+    }
+    
+    func createTest<T: Persistable>(_ model: T.Type, value: [String: Any]?) -> Promise<T.ManagedObject> {
+        return Promise { fullfill, reject in
+            do {
+                try realm.write {
+                    let object = realm.create(T.ManagedObject.self, value: value ?? [], update: false)
+                    fullfill(object)
+                }
+            } catch {
+                reject(RealmError.createFailed("create failed"))
             }
         }
     }
@@ -99,6 +135,22 @@ class RealmStorageContext: RealmStorageFunctions {
         }
         
         return (objects.flatMap { $0 as? T })
+        
+    }
+    
+    func fetchTest<T: Persistable>(_ model: T.Type, predicate: NSPredicate? = nil, sorted: Sorted? = nil) -> [T] {
+        
+        var objects = self.realm.objects(T.ManagedObject.self)
+        
+        if let predicate = predicate {
+            objects = objects.filter(predicate)
+        }
+        
+        if let sorted = sorted {
+            objects = objects.sorted(byKeyPath: sorted.key, ascending: sorted.ascending)
+        }
+        
+        return FetchedResults(results: objects).mapResults()
         
     }
     
