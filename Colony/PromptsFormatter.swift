@@ -19,7 +19,7 @@ final class PromptsFormatter: PromptsFormattingLogic {
         viewController?.displayedPrompts.value = displayedPrompts
     }
     
-    private func mapToDisplayedPrompts(_ prompts: [PromptT]) -> [DisplayedPrompt] {
+    private func mapToDisplayedPrompts(_ prompts: [Prompt]) -> [DisplayedPrompt] {
         return prompts.map({
             return DisplayedPrompt(title: $0.title, body: $0.body, imageURL: URL(string: $0.imageUrl))
         })

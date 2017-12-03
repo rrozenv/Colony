@@ -10,7 +10,7 @@ enum CreatePrompt {
         }
         
         struct Response {
-            var promt: Prompt
+            var prompt: Prompt
         }
         
         struct Alert {

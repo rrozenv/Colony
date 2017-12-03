@@ -8,29 +8,29 @@ protocol Persistable {
     func managedObject() -> ManagedObject
 }
 
-class Prompt: Object {
-    dynamic var uniqueID: String = UUID().uuidString
-    dynamic var title: String = ""
-    dynamic var body: String = ""
-    dynamic var imageURL: String = ""
-    dynamic var time = Date().timeIntervalSince(Date())
-    let replies = List<PromptReply>()
-    
-    override static func primaryKey() -> String? {
-        return "uniqueID"
-    }
-    
-    convenience init(title: String, body: String, imageURL: String) {
-        self.init()
-        self.title = title
-        self.body = body
-        self.imageURL = imageURL
-    }
-    
-    static func valueDict(title: String, body: String, imageURL: String) -> [String: Any] {
-        return ["title": title, "body": body, "imageURL": imageURL]
-    }
-}
+//class Prompt: Object {
+//    dynamic var uniqueID: String = UUID().uuidString
+//    dynamic var title: String = ""
+//    dynamic var body: String = ""
+//    dynamic var imageURL: String = ""
+//    dynamic var time = Date().timeIntervalSince(Date())
+//    let replies = List<PromptReply>()
+//
+//    override static func primaryKey() -> String? {
+//        return "uniqueID"
+//    }
+//
+//    convenience init(title: String, body: String, imageURL: String) {
+//        self.init()
+//        self.title = title
+//        self.body = body
+//        self.imageURL = imageURL
+//    }
+//
+//    static func valueDict(title: String, body: String, imageURL: String) -> [String: Any] {
+//        return ["title": title, "body": body, "imageURL": imageURL]
+//    }
+//}
 
 class Prompt_R: Object {
     dynamic var id: String = ""
@@ -56,7 +56,7 @@ class Prompt_R: Object {
     }
 }
 
-struct PromptT {
+struct Prompt {
     let id: String
     let title: String
     let body: String
@@ -64,7 +64,7 @@ struct PromptT {
     var createdAt: Date?
 }
 
-extension PromptT {
+extension Prompt {
     init?(dictionary: JSONDictionary) {
         guard let id = dictionary["id"] as? Int,
             let title = dictionary["title"] as? String,
@@ -79,7 +79,7 @@ extension PromptT {
     }
 }
 
-extension PromptT: Persistable {
+extension Prompt: Persistable {
     
     init(managedObject: Prompt_R) {
         id = managedObject.id
@@ -99,31 +99,19 @@ extension PromptT: Persistable {
     
 }
 
-extension PromptT {
+extension Prompt {
     
-    static func allPrompts() -> Resource<[PromptT]> {
-        return Resource<[PromptT]>(target: OutpostAPI.getPrompts) { json -> [PromptT]? in
+    static func allPrompts() -> Resource<[Prompt]> {
+        return Resource<[Prompt]>(target: OutpostAPI.getPrompts) { json -> [Prompt]? in
             guard let jsonDicts = json as? [JSONDictionary] else { return nil }
-            return jsonDicts.flatMap({ (dictionary) -> PromptT? in
-                return PromptT(dictionary: dictionary)
+            return jsonDicts.flatMap({ (dictionary) -> Prompt? in
+                return Prompt(dictionary: dictionary)
             })
         }
     }
     
 }
 
-extension String {
-    
-    var date: Date? {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        let calendar = Calendar.current
-        guard let date = formatter.date(from: self) else { return nil }
-        let components = calendar.dateComponents([.month, .day, .hour, .minute], from: date)
-        let finalDate = calendar.date(from:components)
-        return finalDate
-    }
-    
-}
+
 
 

@@ -29,7 +29,7 @@ enum RealmConfig {
     }
     
     private static func commonRealmConfig(user: SyncUser) -> Realm.Configuration  {
-        let config = Realm.Configuration(syncConfiguration: SyncConfiguration(user: SyncUser.current!, realmURL: Constants.commonRealmURL), objectTypes: [Prompt.self, User.self, PromptReply.self, UserScore.self, Prompt_R.self])
+        let config = Realm.Configuration(syncConfiguration: SyncConfiguration(user: SyncUser.current!, realmURL: Constants.commonRealmURL), objectTypes: [User.self, PromptReply.self, UserScore.self, Prompt_R.self])
         return config
     }
     

@@ -24,6 +24,7 @@ class UserScore: Object {
     }
 }
 
+
 class PromptReply: Object {
     dynamic var uniqueID: String = UUID().uuidString
     dynamic var userId: String = ""
@@ -41,7 +42,7 @@ class PromptReply: Object {
         self.init()
         self.userId = user.id
         self.userName = user.name
-        self.promptId = prompt.uniqueID
+        self.promptId = prompt.id
         self.body = body
     }
     

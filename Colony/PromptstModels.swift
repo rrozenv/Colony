@@ -7,7 +7,7 @@ enum Prompts {
         struct Request { }
         
         struct Response {
-            var prompts: [PromptT]
+            var prompts: [Prompt]
         }
         
         //Presenter Output -> View Controller Input

@@ -8,13 +8,13 @@ protocol PromptsListBusinessLogic {
 }
 
 protocol PromptsListDataStore {
-    var prompts: [PromptT] { get }
+    var prompts: [Prompt] { get }
 }
 
 final class PromptsListEngine: PromptsListBusinessLogic, PromptsListDataStore {
     
     var formatter: PromptsFormattingLogic?
-    var prompts: [PromptT] = []
+    var prompts: [Prompt] = []
     let webservice = WebService.shared
     
     lazy var commonRealm: RealmStorageContext = {
@@ -31,11 +31,12 @@ final class PromptsListEngine: PromptsListBusinessLogic, PromptsListDataStore {
 //            .catch { (error) in
 //                print(error.localizedDescription)
 //            }
-        let prompts = self.commonRealm.fetchTest(PromptT.self)
+        let prompts = self.commonRealm.fetchTest(Prompt.self)
+        self.prompts = prompts
         self.generateResponseForPresenter(with: prompts)
     }
     
-    fileprivate func generateResponseForPresenter(with prompts: [PromptT]) {
+    fileprivate func generateResponseForPresenter(with prompts: [Prompt]) {
         let response = Prompts.FetchPrompts.Response(prompts: prompts)
         self.formatter?.formatPrompts(response: response)
     }

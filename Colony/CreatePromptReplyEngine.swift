@@ -26,8 +26,8 @@ final class CreatePromptReplyEngine: CreatePromptReplyLogic, CreatePromptReplyDa
         let promptReply = PromptReply(user: user, prompt: prompt, body: request.body)
         self.commonRealm
             .update { [weak self] in
-                self?.prompt?.replies.append(promptReply)
-                user.replies.append(promptReply)
+//                self?.prompt?.replies.append(promptReply)
+//                user.replies.append(promptReply)
                 completion(true)
             }
             .catch { (error) in

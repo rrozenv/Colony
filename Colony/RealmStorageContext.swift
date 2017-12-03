@@ -83,12 +83,12 @@ class RealmStorageContext: RealmStorageFunctions {
         }
     }
     
-    func createTest<T: Persistable>(_ model: T.Type, value: [String: Any]?) -> Promise<T.ManagedObject> {
+    func createTest<T: Persistable>(_ model: T.Type, value: [String: Any]?) -> Promise<T> {
         return Promise { fullfill, reject in
             do {
                 try realm.write {
                     let object = realm.create(T.ManagedObject.self, value: value ?? [], update: false)
-                    fullfill(object)
+                    fullfill(T(managedObject: object))
                 }
             } catch {
                 reject(RealmError.createFailed("create failed"))
@@ -150,7 +150,7 @@ class RealmStorageContext: RealmStorageFunctions {
             objects = objects.sorted(byKeyPath: sorted.key, ascending: sorted.ascending)
         }
         
-        return FetchedResults(results: objects).mapResults()
+        return objects.map { T(managedObject: $0) }
         
     }
     
